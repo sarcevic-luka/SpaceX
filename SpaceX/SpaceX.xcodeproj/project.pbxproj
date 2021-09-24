@@ -15,6 +15,7 @@
 		53FD54DF26FD0E2C00F43C9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53FD54DD26FD0E2C00F43C9C /* LaunchScreen.storyboard */; };
 		53FD54E826FDD5EE00F43C9C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 53FD54E726FDD5EE00F43C9C /* Alamofire */; };
 		53FD54EB26FDD63C00F43C9C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 53FD54EA26FDD63C00F43C9C /* Kingfisher */; };
+		53FD54EE26FDD67600F43C9C /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = 53FD54ED26FDD67600F43C9C /* Promises */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 			files = (
 				53FD54EB26FDD63C00F43C9C /* Kingfisher in Frameworks */,
 				53FD54E826FDD5EE00F43C9C /* Alamofire in Frameworks */,
+				53FD54EE26FDD67600F43C9C /* Promises in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +92,7 @@
 			packageProductDependencies = (
 				53FD54E726FDD5EE00F43C9C /* Alamofire */,
 				53FD54EA26FDD63C00F43C9C /* Kingfisher */,
+				53FD54ED26FDD67600F43C9C /* Promises */,
 			);
 			productName = SpaceX;
 			productReference = 53FD54CF26FD0E2C00F43C9C /* SpaceX.app */;
@@ -122,6 +125,7 @@
 			packageReferences = (
 				53FD54E626FDD5EE00F43C9C /* XCRemoteSwiftPackageReference "Alamofire" */,
 				53FD54E926FDD63C00F43C9C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				53FD54EC26FDD67600F43C9C /* XCRemoteSwiftPackageReference "promises" */,
 			);
 			productRefGroup = 53FD54D026FD0E2C00F43C9C /* Products */;
 			projectDirPath = "";
@@ -390,6 +394,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		53FD54EC26FDD67600F43C9C /* XCRemoteSwiftPackageReference "promises" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/promises.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -402,6 +414,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 53FD54E926FDD63C00F43C9C /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		53FD54ED26FDD67600F43C9C /* Promises */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53FD54EC26FDD67600F43C9C /* XCRemoteSwiftPackageReference "promises" */;
+			productName = Promises;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
