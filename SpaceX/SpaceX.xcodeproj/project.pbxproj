@@ -37,6 +37,14 @@
 		53FD552926FDF36000F43C9C /* SFPro-Regular.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 53FD552526FDF35700F43C9C /* SFPro-Regular.OTF */; };
 		53FD552A26FDF36000F43C9C /* SFPro-Medium.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 53FD552426FDF35700F43C9C /* SFPro-Medium.OTF */; };
 		53FD552B26FDF36000F43C9C /* SFPro-Bold.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 53FD552326FDF35700F43C9C /* SFPro-Bold.OTF */; };
+		53FD553926FDFAAC00F43C9C /* Model.docc in Sources */ = {isa = PBXBuildFile; fileRef = 53FD553826FDFAAC00F43C9C /* Model.docc */; };
+		53FD553A26FDFAAC00F43C9C /* Model.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FD553726FDFAAC00F43C9C /* Model.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53FD553D26FDFAAC00F43C9C /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FD553526FDFAAC00F43C9C /* Model.framework */; };
+		53FD553E26FDFAAC00F43C9C /* Model.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53FD553526FDFAAC00F43C9C /* Model.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		53FD554426FE001900F43C9C /* LaunchDetailsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD554326FE001900F43C9C /* LaunchDetailsItem.swift */; };
+		53FD554626FE012900F43C9C /* RocketDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD554526FE012900F43C9C /* RocketDetails.swift */; };
+		53FD554826FE02F500F43C9C /* LinkDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD554726FE02F500F43C9C /* LinkDetails.swift */; };
+		53FD554C26FE079900F43C9C /* CompanyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD554B26FE079900F43C9C /* CompanyInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +55,13 @@
 			remoteGlobalIDString = 53FD54F626FDD97D00F43C9C;
 			remoteInfo = Assets;
 		};
+		53FD553B26FDFAAC00F43C9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FD54C726FD0E2C00F43C9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53FD553426FDFAAC00F43C9C;
+			remoteInfo = Model;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,6 +71,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				53FD553E26FDFAAC00F43C9C /* Model.framework in Embed Frameworks */,
 				53FD550026FDD97D00F43C9C /* Assets.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -88,6 +104,13 @@
 		53FD552426FDF35700F43C9C /* SFPro-Medium.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFPro-Medium.OTF"; sourceTree = "<group>"; };
 		53FD552526FDF35700F43C9C /* SFPro-Regular.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFPro-Regular.OTF"; sourceTree = "<group>"; };
 		53FD552F26FDF79F00F43C9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		53FD553526FDFAAC00F43C9C /* Model.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Model.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53FD553726FDFAAC00F43C9C /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		53FD553826FDFAAC00F43C9C /* Model.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Model.docc; sourceTree = "<group>"; };
+		53FD554326FE001900F43C9C /* LaunchDetailsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsItem.swift; sourceTree = "<group>"; };
+		53FD554526FE012900F43C9C /* RocketDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetails.swift; sourceTree = "<group>"; };
+		53FD554726FE02F500F43C9C /* LinkDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDetails.swift; sourceTree = "<group>"; };
+		53FD554B26FE079900F43C9C /* CompanyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +122,19 @@
 				53FD54FF26FDD97D00F43C9C /* Assets.framework in Frameworks */,
 				53FD54F126FDD76000F43C9C /* SnapKit in Frameworks */,
 				53FD54E826FDD5EE00F43C9C /* Alamofire in Frameworks */,
+				53FD553D26FDFAAC00F43C9C /* Model.framework in Frameworks */,
 				53FD54EE26FDD67600F43C9C /* Promises in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		53FD54F426FDD97D00F43C9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FD553226FDFAAC00F43C9C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -118,6 +149,7 @@
 			children = (
 				53FD54D126FD0E2C00F43C9C /* SpaceX */,
 				53FD54F826FDD97D00F43C9C /* Assets */,
+				53FD553626FDFAAC00F43C9C /* Model */,
 				53FD54D026FD0E2C00F43C9C /* Products */,
 			);
 			indentWidth = 2;
@@ -129,6 +161,7 @@
 			children = (
 				53FD54CF26FD0E2C00F43C9C /* SpaceX.app */,
 				53FD54F726FDD97D00F43C9C /* Assets.framework */,
+				53FD553526FDFAAC00F43C9C /* Model.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -257,6 +290,43 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		53FD553626FDFAAC00F43C9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				53FD553826FDFAAC00F43C9C /* Model.docc */,
+				53FD553726FDFAAC00F43C9C /* Model.h */,
+				53FD554226FDFEA100F43C9C /* Source */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		53FD554226FDFEA100F43C9C /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				53FD554A26FE06D900F43C9C /* Company details */,
+				53FD554926FE02F900F43C9C /* Launch list */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		53FD554926FE02F900F43C9C /* Launch list */ = {
+			isa = PBXGroup;
+			children = (
+				53FD554326FE001900F43C9C /* LaunchDetailsItem.swift */,
+				53FD554526FE012900F43C9C /* RocketDetails.swift */,
+				53FD554726FE02F500F43C9C /* LinkDetails.swift */,
+			);
+			path = "Launch list";
+			sourceTree = "<group>";
+		};
+		53FD554A26FE06D900F43C9C /* Company details */ = {
+			isa = PBXGroup;
+			children = (
+				53FD554B26FE079900F43C9C /* CompanyInfo.swift */,
+			);
+			path = "Company details";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -265,6 +335,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				53FD54FC26FDD97D00F43C9C /* Assets.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FD553026FDFAAC00F43C9C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FD553A26FDFAAC00F43C9C /* Model.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +362,7 @@
 			);
 			dependencies = (
 				53FD54FE26FDD97D00F43C9C /* PBXTargetDependency */,
+				53FD553C26FDFAAC00F43C9C /* PBXTargetDependency */,
 			);
 			name = SpaceX;
 			packageProductDependencies = (
@@ -314,6 +393,24 @@
 			productReference = 53FD54F726FDD97D00F43C9C /* Assets.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		53FD553426FDFAAC00F43C9C /* Model */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53FD553F26FDFAAC00F43C9C /* Build configuration list for PBXNativeTarget "Model" */;
+			buildPhases = (
+				53FD553026FDFAAC00F43C9C /* Headers */,
+				53FD553126FDFAAC00F43C9C /* Sources */,
+				53FD553226FDFAAC00F43C9C /* Frameworks */,
+				53FD553326FDFAAC00F43C9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Model;
+			productName = Model;
+			productReference = 53FD553526FDFAAC00F43C9C /* Model.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -328,6 +425,9 @@
 						CreatedOnToolsVersion = 13.0;
 					};
 					53FD54F626FDD97D00F43C9C = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					53FD553426FDFAAC00F43C9C = {
 						CreatedOnToolsVersion = 13.0;
 					};
 				};
@@ -353,6 +453,7 @@
 			targets = (
 				53FD54CE26FD0E2C00F43C9C /* SpaceX */,
 				53FD54F626FDD97D00F43C9C /* Assets */,
+				53FD553426FDFAAC00F43C9C /* Model */,
 			);
 		};
 /* End PBXProject section */
@@ -380,6 +481,13 @@
 				53FD552826FDF35700F43C9C /* SFPro-Regular.OTF in Resources */,
 				53FD552626FDF35700F43C9C /* SFPro-Bold.OTF in Resources */,
 				53FD552726FDF35700F43C9C /* SFPro-Medium.OTF in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FD553326FDFAAC00F43C9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +520,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		53FD553126FDFAAC00F43C9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FD554826FE02F500F43C9C /* LinkDetails.swift in Sources */,
+				53FD554C26FE079900F43C9C /* CompanyInfo.swift in Sources */,
+				53FD553926FDFAAC00F43C9C /* Model.docc in Sources */,
+				53FD554626FE012900F43C9C /* RocketDetails.swift in Sources */,
+				53FD554426FE001900F43C9C /* LaunchDetailsItem.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -419,6 +539,11 @@
 			isa = PBXTargetDependency;
 			target = 53FD54F626FDD97D00F43C9C /* Assets */;
 			targetProxy = 53FD54FD26FDD97D00F43C9C /* PBXContainerItemProxy */;
+		};
+		53FD553C26FDFAAC00F43C9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53FD553426FDFAAC00F43C9C /* Model */;
+			targetProxy = 53FD553B26FDFAAC00F43C9C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -678,6 +803,66 @@
 			};
 			name = Release;
 		};
+		53FD554026FDFAAC00F43C9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = VJVL8D83F6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = luka.sarcevic.Model;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		53FD554126FDFAAC00F43C9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = VJVL8D83F6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = luka.sarcevic.Model;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -704,6 +889,15 @@
 			buildConfigurations = (
 				53FD550226FDD97D00F43C9C /* Debug */,
 				53FD550326FDD97D00F43C9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53FD553F26FDFAAC00F43C9C /* Build configuration list for PBXNativeTarget "Model" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53FD554026FDFAAC00F43C9C /* Debug */,
+				53FD554126FDFAAC00F43C9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
