@@ -13,6 +13,7 @@
 		53FD54DA26FD0E2C00F43C9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53FD54D826FD0E2C00F43C9C /* Main.storyboard */; };
 		53FD54DC26FD0E2C00F43C9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53FD54DB26FD0E2C00F43C9C /* Assets.xcassets */; };
 		53FD54DF26FD0E2C00F43C9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53FD54DD26FD0E2C00F43C9C /* LaunchScreen.storyboard */; };
+		53FD54E826FDD5EE00F43C9C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 53FD54E726FDD5EE00F43C9C /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53FD54E826FDD5EE00F43C9C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = SpaceX;
+			packageProductDependencies = (
+				53FD54E726FDD5EE00F43C9C /* Alamofire */,
+			);
 			productName = SpaceX;
 			productReference = 53FD54CF26FD0E2C00F43C9C /* SpaceX.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = 53FD54C626FD0E2C00F43C9C;
+			packageReferences = (
+				53FD54E626FDD5EE00F43C9C /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 53FD54D026FD0E2C00F43C9C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -360,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		53FD54E626FDD5EE00F43C9C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		53FD54E726FDD5EE00F43C9C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53FD54E626FDD5EE00F43C9C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 53FD54C726FD0E2C00F43C9C /* Project object */;
 }
