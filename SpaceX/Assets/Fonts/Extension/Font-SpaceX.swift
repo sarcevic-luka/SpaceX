@@ -13,8 +13,8 @@ public extension UIFont {
   }
     
   enum FontWeight: String, CaseIterable {
-    case hollow = "Bold"
+    case bold = "Bold"
     case regular = "Regular"
-    case solid = "Medium"
+    case medium = "Medium"
   }
 }
