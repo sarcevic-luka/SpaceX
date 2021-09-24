@@ -13,10 +13,6 @@
 		53FD54DA26FD0E2C00F43C9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53FD54D826FD0E2C00F43C9C /* Main.storyboard */; };
 		53FD54DC26FD0E2C00F43C9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53FD54DB26FD0E2C00F43C9C /* Assets.xcassets */; };
 		53FD54DF26FD0E2C00F43C9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53FD54DD26FD0E2C00F43C9C /* LaunchScreen.storyboard */; };
-		53FD54E826FDD5EE00F43C9C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 53FD54E726FDD5EE00F43C9C /* Alamofire */; };
-		53FD54EB26FDD63C00F43C9C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 53FD54EA26FDD63C00F43C9C /* Kingfisher */; };
-		53FD54EE26FDD67600F43C9C /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = 53FD54ED26FDD67600F43C9C /* Promises */; };
-		53FD54F126FDD76000F43C9C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 53FD54F026FDD76000F43C9C /* SnapKit */; };
 		53FD54FB26FDD97D00F43C9C /* Assets.docc in Sources */ = {isa = PBXBuildFile; fileRef = 53FD54FA26FDD97D00F43C9C /* Assets.docc */; };
 		53FD54FC26FDD97D00F43C9C /* Assets.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FD54F926FDD97D00F43C9C /* Assets.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		53FD54FF26FDD97D00F43C9C /* Assets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FD54F726FDD97D00F43C9C /* Assets.framework */; };
@@ -45,6 +41,35 @@
 		53FD554626FE012900F43C9C /* RocketDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD554526FE012900F43C9C /* RocketDetails.swift */; };
 		53FD554826FE02F500F43C9C /* LinkDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD554726FE02F500F43C9C /* LinkDetails.swift */; };
 		53FD554C26FE079900F43C9C /* CompanyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD554B26FE079900F43C9C /* CompanyInfo.swift */; };
+		53FD555526FE169000F43C9C /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FD555426FE169000F43C9C /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53FD555826FE169000F43C9C /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FD555226FE169000F43C9C /* Networking.framework */; };
+		53FD555926FE169000F43C9C /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53FD555226FE169000F43C9C /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		53FD555F26FE220B00F43C9C /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD555E26FE220B00F43C9C /* Networking.swift */; };
+		53FD556226FE223A00F43C9C /* JSONFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD556126FE223A00F43C9C /* JSONFormatter.swift */; };
+		53FD556426FE224900F43C9C /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD556326FE224900F43C9C /* Host.swift */; };
+		53FD556626FE30B400F43C9C /* UrlQueryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD556526FE30B400F43C9C /* UrlQueryBuilder.swift */; };
+		53FD556826FE30D600F43C9C /* JSONEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD556726FE30D600F43C9C /* JSONEncoder.swift */; };
+		53FD556A26FE30EA00F43C9C /* NetworkEventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD556926FE30EA00F43C9C /* NetworkEventMonitor.swift */; };
+		53FD556E26FE314600F43C9C /* LaunchListNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD556D26FE314600F43C9C /* LaunchListNetworkService.swift */; };
+		53FD557726FE320800F43C9C /* SPMLibaries.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FD557626FE320800F43C9C /* SPMLibaries.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53FD557A26FE320800F43C9C /* SPMLibaries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FD557426FE320800F43C9C /* SPMLibaries.framework */; };
+		53FD557B26FE320800F43C9C /* SPMLibaries.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53FD557426FE320800F43C9C /* SPMLibaries.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		53FD558126FE323B00F43C9C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 53FD558026FE323B00F43C9C /* Alamofire */; };
+		53FD558326FE324100F43C9C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 53FD558226FE324100F43C9C /* SnapKit */; };
+		53FD558526FE324700F43C9C /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = 53FD558426FE324700F43C9C /* Promises */; };
+		53FD558726FE324F00F43C9C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 53FD558626FE324F00F43C9C /* Kingfisher */; };
+		53FD558D26FE32B300F43C9C /* SPMLibaries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FD557426FE320800F43C9C /* SPMLibaries.framework */; };
+		53FD558E26FE32B300F43C9C /* SPMLibaries.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53FD557426FE320800F43C9C /* SPMLibaries.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		53FD559226FE32B800F43C9C /* SPMLibaries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FD557426FE320800F43C9C /* SPMLibaries.framework */; };
+		53FD559326FE32B800F43C9C /* SPMLibaries.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53FD557426FE320800F43C9C /* SPMLibaries.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		53FD559726FE32BB00F43C9C /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FD553526FDFAAC00F43C9C /* Model.framework */; };
+		53FD559826FE32BB00F43C9C /* Model.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53FD553526FDFAAC00F43C9C /* Model.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		53FD559D26FE362300F43C9C /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD559C26FE362300F43C9C /* Resource.swift */; };
+		53FD55A126FE367C00F43C9C /* ApiResponseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD55A026FE367C00F43C9C /* ApiResponseContainer.swift */; };
+		53FD55A526FE386200F43C9C /* String-Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD55A426FE386200F43C9C /* String-Networking.swift */; };
+		53FD55A826FE388B00F43C9C /* Decoding-Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD55A726FE388B00F43C9C /* Decoding-Networking.swift */; };
+		53FD55AB26FE38AF00F43C9C /* Session-Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD55AA26FE38AF00F43C9C /* Session-Networking.swift */; };
+		53FD55AE26FE3B3600F43C9C /* LaunchListResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD55AD26FE3B3600F43C9C /* LaunchListResource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +87,41 @@
 			remoteGlobalIDString = 53FD553426FDFAAC00F43C9C;
 			remoteInfo = Model;
 		};
+		53FD555626FE169000F43C9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FD54C726FD0E2C00F43C9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53FD555126FE169000F43C9C;
+			remoteInfo = Networking;
+		};
+		53FD557826FE320800F43C9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FD54C726FD0E2C00F43C9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53FD557326FE320800F43C9C;
+			remoteInfo = SPMLibaries;
+		};
+		53FD558F26FE32B300F43C9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FD54C726FD0E2C00F43C9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53FD557326FE320800F43C9C;
+			remoteInfo = SPMLibaries;
+		};
+		53FD559426FE32B800F43C9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FD54C726FD0E2C00F43C9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53FD557326FE320800F43C9C;
+			remoteInfo = SPMLibaries;
+		};
+		53FD559926FE32BB00F43C9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53FD54C726FD0E2C00F43C9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53FD553426FDFAAC00F43C9C;
+			remoteInfo = Model;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,8 +131,33 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				53FD557B26FE320800F43C9C /* SPMLibaries.framework in Embed Frameworks */,
 				53FD553E26FDFAAC00F43C9C /* Model.framework in Embed Frameworks */,
 				53FD550026FDD97D00F43C9C /* Assets.framework in Embed Frameworks */,
+				53FD555926FE169000F43C9C /* Networking.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FD559126FE32B300F43C9C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				53FD558E26FE32B300F43C9C /* SPMLibaries.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FD559626FE32B800F43C9C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				53FD559826FE32BB00F43C9C /* Model.framework in Embed Frameworks */,
+				53FD559326FE32B800F43C9C /* SPMLibaries.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +196,23 @@
 		53FD554526FE012900F43C9C /* RocketDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetails.swift; sourceTree = "<group>"; };
 		53FD554726FE02F500F43C9C /* LinkDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDetails.swift; sourceTree = "<group>"; };
 		53FD554B26FE079900F43C9C /* CompanyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfo.swift; sourceTree = "<group>"; };
+		53FD555226FE169000F43C9C /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53FD555426FE169000F43C9C /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
+		53FD555E26FE220B00F43C9C /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		53FD556126FE223A00F43C9C /* JSONFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFormatter.swift; sourceTree = "<group>"; };
+		53FD556326FE224900F43C9C /* Host.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
+		53FD556526FE30B400F43C9C /* UrlQueryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlQueryBuilder.swift; sourceTree = "<group>"; };
+		53FD556726FE30D600F43C9C /* JSONEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONEncoder.swift; sourceTree = "<group>"; };
+		53FD556926FE30EA00F43C9C /* NetworkEventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEventMonitor.swift; sourceTree = "<group>"; };
+		53FD556D26FE314600F43C9C /* LaunchListNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListNetworkService.swift; sourceTree = "<group>"; };
+		53FD557426FE320800F43C9C /* SPMLibaries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPMLibaries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53FD557626FE320800F43C9C /* SPMLibaries.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPMLibaries.h; sourceTree = "<group>"; };
+		53FD559C26FE362300F43C9C /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		53FD55A026FE367C00F43C9C /* ApiResponseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponseContainer.swift; sourceTree = "<group>"; };
+		53FD55A426FE386200F43C9C /* String-Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-Networking.swift"; sourceTree = "<group>"; };
+		53FD55A726FE388B00F43C9C /* Decoding-Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decoding-Networking.swift"; sourceTree = "<group>"; };
+		53FD55AA26FE38AF00F43C9C /* Session-Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session-Networking.swift"; sourceTree = "<group>"; };
+		53FD55AD26FE3B3600F43C9C /* LaunchListResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListResource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,12 +220,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53FD54EB26FDD63C00F43C9C /* Kingfisher in Frameworks */,
 				53FD54FF26FDD97D00F43C9C /* Assets.framework in Frameworks */,
-				53FD54F126FDD76000F43C9C /* SnapKit in Frameworks */,
-				53FD54E826FDD5EE00F43C9C /* Alamofire in Frameworks */,
+				53FD557A26FE320800F43C9C /* SPMLibaries.framework in Frameworks */,
 				53FD553D26FDFAAC00F43C9C /* Model.framework in Frameworks */,
-				53FD54EE26FDD67600F43C9C /* Promises in Frameworks */,
+				53FD555826FE169000F43C9C /* Networking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +238,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53FD558D26FE32B300F43C9C /* SPMLibaries.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FD554F26FE169000F43C9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FD559726FE32BB00F43C9C /* Model.framework in Frameworks */,
+				53FD559226FE32B800F43C9C /* SPMLibaries.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FD557126FE320800F43C9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FD558726FE324F00F43C9C /* Kingfisher in Frameworks */,
+				53FD558126FE323B00F43C9C /* Alamofire in Frameworks */,
+				53FD558326FE324100F43C9C /* SnapKit in Frameworks */,
+				53FD558526FE324700F43C9C /* Promises in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +271,10 @@
 				53FD54D126FD0E2C00F43C9C /* SpaceX */,
 				53FD54F826FDD97D00F43C9C /* Assets */,
 				53FD553626FDFAAC00F43C9C /* Model */,
+				53FD555326FE169000F43C9C /* Networking */,
+				53FD557526FE320800F43C9C /* SPMLibaries */,
 				53FD54D026FD0E2C00F43C9C /* Products */,
+				53FD557F26FE323B00F43C9C /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -162,6 +286,8 @@
 				53FD54CF26FD0E2C00F43C9C /* SpaceX.app */,
 				53FD54F726FDD97D00F43C9C /* Assets.framework */,
 				53FD553526FDFAAC00F43C9C /* Model.framework */,
+				53FD555226FE169000F43C9C /* Networking.framework */,
+				53FD557426FE320800F43C9C /* SPMLibaries.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -303,7 +429,6 @@
 		53FD554226FDFEA100F43C9C /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				53FD554A26FE06D900F43C9C /* Company details */,
 				53FD554926FE02F900F43C9C /* Launch list */,
 			);
 			path = Source;
@@ -312,19 +437,144 @@
 		53FD554926FE02F900F43C9C /* Launch list */ = {
 			isa = PBXGroup;
 			children = (
+				53FD554B26FE079900F43C9C /* CompanyInfo.swift */,
 				53FD554326FE001900F43C9C /* LaunchDetailsItem.swift */,
-				53FD554526FE012900F43C9C /* RocketDetails.swift */,
 				53FD554726FE02F500F43C9C /* LinkDetails.swift */,
+				53FD554526FE012900F43C9C /* RocketDetails.swift */,
 			);
 			path = "Launch list";
 			sourceTree = "<group>";
 		};
-		53FD554A26FE06D900F43C9C /* Company details */ = {
+		53FD555326FE169000F43C9C /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				53FD554B26FE079900F43C9C /* CompanyInfo.swift */,
+				53FD555426FE169000F43C9C /* Networking.h */,
+				53FD555D26FE21EF00F43C9C /* Source */,
 			);
-			path = "Company details";
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		53FD555D26FE21EF00F43C9C /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				53FD555E26FE220B00F43C9C /* Networking.swift */,
+				53FD55AC26FE38F900F43C9C /* Api resource */,
+				53FD55A226FE369600F43C9C /* Extensions */,
+				53FD559E26FE366B00F43C9C /* Models */,
+				53FD559B26FE361A00F43C9C /* Protocols */,
+				53FD556B26FE310000F43C9C /* Services */,
+				53FD556026FE222A00F43C9C /* Utility */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		53FD556026FE222A00F43C9C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				53FD556126FE223A00F43C9C /* JSONFormatter.swift */,
+				53FD556326FE224900F43C9C /* Host.swift */,
+				53FD556526FE30B400F43C9C /* UrlQueryBuilder.swift */,
+				53FD556726FE30D600F43C9C /* JSONEncoder.swift */,
+				53FD556926FE30EA00F43C9C /* NetworkEventMonitor.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		53FD556B26FE310000F43C9C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				53FD556C26FE310B00F43C9C /* Domain */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		53FD556C26FE310B00F43C9C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				53FD556D26FE314600F43C9C /* LaunchListNetworkService.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		53FD557526FE320800F43C9C /* SPMLibaries */ = {
+			isa = PBXGroup;
+			children = (
+				53FD557626FE320800F43C9C /* SPMLibaries.h */,
+			);
+			path = SPMLibaries;
+			sourceTree = "<group>";
+		};
+		53FD557F26FE323B00F43C9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		53FD559B26FE361A00F43C9C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				53FD559C26FE362300F43C9C /* Resource.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		53FD559E26FE366B00F43C9C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				53FD559F26FE367100F43C9C /* Response */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		53FD559F26FE367100F43C9C /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				53FD55A026FE367C00F43C9C /* ApiResponseContainer.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		53FD55A226FE369600F43C9C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				53FD55A926FE389B00F43C9C /* Alamofire */,
+				53FD55A626FE387A00F43C9C /* Decoding */,
+				53FD55A326FE369C00F43C9C /* Foundation */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		53FD55A326FE369C00F43C9C /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				53FD55A426FE386200F43C9C /* String-Networking.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		53FD55A626FE387A00F43C9C /* Decoding */ = {
+			isa = PBXGroup;
+			children = (
+				53FD55A726FE388B00F43C9C /* Decoding-Networking.swift */,
+			);
+			path = Decoding;
+			sourceTree = "<group>";
+		};
+		53FD55A926FE389B00F43C9C /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				53FD55AA26FE38AF00F43C9C /* Session-Networking.swift */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		53FD55AC26FE38F900F43C9C /* Api resource */ = {
+			isa = PBXGroup;
+			children = (
+				53FD55AD26FE3B3600F43C9C /* LaunchListResource.swift */,
+			);
+			path = "Api resource";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +596,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		53FD554D26FE169000F43C9C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FD555526FE169000F43C9C /* Networking.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FD556F26FE320800F43C9C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FD557726FE320800F43C9C /* SPMLibaries.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -363,13 +629,11 @@
 			dependencies = (
 				53FD54FE26FDD97D00F43C9C /* PBXTargetDependency */,
 				53FD553C26FDFAAC00F43C9C /* PBXTargetDependency */,
+				53FD555726FE169000F43C9C /* PBXTargetDependency */,
+				53FD557926FE320800F43C9C /* PBXTargetDependency */,
 			);
 			name = SpaceX;
 			packageProductDependencies = (
-				53FD54E726FDD5EE00F43C9C /* Alamofire */,
-				53FD54EA26FDD63C00F43C9C /* Kingfisher */,
-				53FD54ED26FDD67600F43C9C /* Promises */,
-				53FD54F026FDD76000F43C9C /* SnapKit */,
 			);
 			productName = SpaceX;
 			productReference = 53FD54CF26FD0E2C00F43C9C /* SpaceX.app */;
@@ -401,14 +665,61 @@
 				53FD553126FDFAAC00F43C9C /* Sources */,
 				53FD553226FDFAAC00F43C9C /* Frameworks */,
 				53FD553326FDFAAC00F43C9C /* Resources */,
+				53FD559126FE32B300F43C9C /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53FD559026FE32B300F43C9C /* PBXTargetDependency */,
+			);
+			name = Model;
+			productName = Model;
+			productReference = 53FD553526FDFAAC00F43C9C /* Model.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		53FD555126FE169000F43C9C /* Networking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53FD555A26FE169000F43C9C /* Build configuration list for PBXNativeTarget "Networking" */;
+			buildPhases = (
+				53FD554D26FE169000F43C9C /* Headers */,
+				53FD554E26FE169000F43C9C /* Sources */,
+				53FD554F26FE169000F43C9C /* Frameworks */,
+				53FD555026FE169000F43C9C /* Resources */,
+				53FD559626FE32B800F43C9C /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53FD559526FE32B800F43C9C /* PBXTargetDependency */,
+				53FD559A26FE32BB00F43C9C /* PBXTargetDependency */,
+			);
+			name = Networking;
+			productName = Networking;
+			productReference = 53FD555226FE169000F43C9C /* Networking.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		53FD557326FE320800F43C9C /* SPMLibaries */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53FD557C26FE320800F43C9C /* Build configuration list for PBXNativeTarget "SPMLibaries" */;
+			buildPhases = (
+				53FD556F26FE320800F43C9C /* Headers */,
+				53FD557026FE320800F43C9C /* Sources */,
+				53FD557126FE320800F43C9C /* Frameworks */,
+				53FD557226FE320800F43C9C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Model;
-			productName = Model;
-			productReference = 53FD553526FDFAAC00F43C9C /* Model.framework */;
+			name = SPMLibaries;
+			packageProductDependencies = (
+				53FD558026FE323B00F43C9C /* Alamofire */,
+				53FD558226FE324100F43C9C /* SnapKit */,
+				53FD558426FE324700F43C9C /* Promises */,
+				53FD558626FE324F00F43C9C /* Kingfisher */,
+			);
+			productName = SPMLibaries;
+			productReference = 53FD557426FE320800F43C9C /* SPMLibaries.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -428,6 +739,13 @@
 						CreatedOnToolsVersion = 13.0;
 					};
 					53FD553426FDFAAC00F43C9C = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					53FD555126FE169000F43C9C = {
+						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1300;
+					};
+					53FD557326FE320800F43C9C = {
 						CreatedOnToolsVersion = 13.0;
 					};
 				};
@@ -454,6 +772,8 @@
 				53FD54CE26FD0E2C00F43C9C /* SpaceX */,
 				53FD54F626FDD97D00F43C9C /* Assets */,
 				53FD553426FDFAAC00F43C9C /* Model */,
+				53FD555126FE169000F43C9C /* Networking */,
+				53FD557326FE320800F43C9C /* SPMLibaries */,
 			);
 		};
 /* End PBXProject section */
@@ -485,6 +805,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		53FD553326FDFAAC00F43C9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FD555026FE169000F43C9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FD557226FE320800F43C9C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -532,6 +866,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		53FD554E26FE169000F43C9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FD55A526FE386200F43C9C /* String-Networking.swift in Sources */,
+				53FD556826FE30D600F43C9C /* JSONEncoder.swift in Sources */,
+				53FD559D26FE362300F43C9C /* Resource.swift in Sources */,
+				53FD556626FE30B400F43C9C /* UrlQueryBuilder.swift in Sources */,
+				53FD55AB26FE38AF00F43C9C /* Session-Networking.swift in Sources */,
+				53FD55AE26FE3B3600F43C9C /* LaunchListResource.swift in Sources */,
+				53FD556426FE224900F43C9C /* Host.swift in Sources */,
+				53FD556226FE223A00F43C9C /* JSONFormatter.swift in Sources */,
+				53FD55A826FE388B00F43C9C /* Decoding-Networking.swift in Sources */,
+				53FD556A26FE30EA00F43C9C /* NetworkEventMonitor.swift in Sources */,
+				53FD556E26FE314600F43C9C /* LaunchListNetworkService.swift in Sources */,
+				53FD555F26FE220B00F43C9C /* Networking.swift in Sources */,
+				53FD55A126FE367C00F43C9C /* ApiResponseContainer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FD557026FE320800F43C9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -544,6 +905,31 @@
 			isa = PBXTargetDependency;
 			target = 53FD553426FDFAAC00F43C9C /* Model */;
 			targetProxy = 53FD553B26FDFAAC00F43C9C /* PBXContainerItemProxy */;
+		};
+		53FD555726FE169000F43C9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53FD555126FE169000F43C9C /* Networking */;
+			targetProxy = 53FD555626FE169000F43C9C /* PBXContainerItemProxy */;
+		};
+		53FD557926FE320800F43C9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53FD557326FE320800F43C9C /* SPMLibaries */;
+			targetProxy = 53FD557826FE320800F43C9C /* PBXContainerItemProxy */;
+		};
+		53FD559026FE32B300F43C9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53FD557326FE320800F43C9C /* SPMLibaries */;
+			targetProxy = 53FD558F26FE32B300F43C9C /* PBXContainerItemProxy */;
+		};
+		53FD559526FE32B800F43C9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53FD557326FE320800F43C9C /* SPMLibaries */;
+			targetProxy = 53FD559426FE32B800F43C9C /* PBXContainerItemProxy */;
+		};
+		53FD559A26FE32BB00F43C9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53FD553426FDFAAC00F43C9C /* Model */;
+			targetProxy = 53FD559926FE32BB00F43C9C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -691,7 +1077,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VJVL8D83F6;
+				DEVELOPMENT_TEAM = 69AX8GLMBG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SpaceX/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -720,7 +1106,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VJVL8D83F6;
+				DEVELOPMENT_TEAM = 69AX8GLMBG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SpaceX/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -863,6 +1249,129 @@
 			};
 			name = Release;
 		};
+		53FD555B26FE169000F43C9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = VJVL8D83F6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = luka.sarcevic.Networking;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		53FD555C26FE169000F43C9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = VJVL8D83F6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = luka.sarcevic.Networking;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		53FD557D26FE320800F43C9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = VJVL8D83F6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = luka.sarcevic.SPMLibaries;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		53FD557E26FE320800F43C9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = VJVL8D83F6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = luka.sarcevic.SPMLibaries;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -898,6 +1407,24 @@
 			buildConfigurations = (
 				53FD554026FDFAAC00F43C9C /* Debug */,
 				53FD554126FDFAAC00F43C9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53FD555A26FE169000F43C9C /* Build configuration list for PBXNativeTarget "Networking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53FD555B26FE169000F43C9C /* Debug */,
+				53FD555C26FE169000F43C9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53FD557C26FE320800F43C9C /* Build configuration list for PBXNativeTarget "SPMLibaries" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53FD557D26FE320800F43C9C /* Debug */,
+				53FD557E26FE320800F43C9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -940,25 +1467,25 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		53FD54E726FDD5EE00F43C9C /* Alamofire */ = {
+		53FD558026FE323B00F43C9C /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 53FD54E626FDD5EE00F43C9C /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		53FD54EA26FDD63C00F43C9C /* Kingfisher */ = {
+		53FD558226FE324100F43C9C /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 53FD54E926FDD63C00F43C9C /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
+			package = 53FD54EF26FDD76000F43C9C /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
-		53FD54ED26FDD67600F43C9C /* Promises */ = {
+		53FD558426FE324700F43C9C /* Promises */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 53FD54EC26FDD67600F43C9C /* XCRemoteSwiftPackageReference "promises" */;
 			productName = Promises;
 		};
-		53FD54F026FDD76000F43C9C /* SnapKit */ = {
+		53FD558626FE324F00F43C9C /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 53FD54EF26FDD76000F43C9C /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
+			package = 53FD54E926FDD63C00F43C9C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
