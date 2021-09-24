@@ -16,6 +16,7 @@
 		53FD54E826FDD5EE00F43C9C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 53FD54E726FDD5EE00F43C9C /* Alamofire */; };
 		53FD54EB26FDD63C00F43C9C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 53FD54EA26FDD63C00F43C9C /* Kingfisher */; };
 		53FD54EE26FDD67600F43C9C /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = 53FD54ED26FDD67600F43C9C /* Promises */; };
+		53FD54F126FDD76000F43C9C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 53FD54F026FDD76000F43C9C /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53FD54EB26FDD63C00F43C9C /* Kingfisher in Frameworks */,
+				53FD54F126FDD76000F43C9C /* SnapKit in Frameworks */,
 				53FD54E826FDD5EE00F43C9C /* Alamofire in Frameworks */,
 				53FD54EE26FDD67600F43C9C /* Promises in Frameworks */,
 			);
@@ -93,6 +95,7 @@
 				53FD54E726FDD5EE00F43C9C /* Alamofire */,
 				53FD54EA26FDD63C00F43C9C /* Kingfisher */,
 				53FD54ED26FDD67600F43C9C /* Promises */,
+				53FD54F026FDD76000F43C9C /* SnapKit */,
 			);
 			productName = SpaceX;
 			productReference = 53FD54CF26FD0E2C00F43C9C /* SpaceX.app */;
@@ -126,6 +129,7 @@
 				53FD54E626FDD5EE00F43C9C /* XCRemoteSwiftPackageReference "Alamofire" */,
 				53FD54E926FDD63C00F43C9C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				53FD54EC26FDD67600F43C9C /* XCRemoteSwiftPackageReference "promises" */,
+				53FD54EF26FDD76000F43C9C /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 53FD54D026FD0E2C00F43C9C /* Products */;
 			projectDirPath = "";
@@ -402,6 +406,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		53FD54EF26FDD76000F43C9C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -419,6 +431,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 53FD54EC26FDD67600F43C9C /* XCRemoteSwiftPackageReference "promises" */;
 			productName = Promises;
+		};
+		53FD54F026FDD76000F43C9C /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53FD54EF26FDD76000F43C9C /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
