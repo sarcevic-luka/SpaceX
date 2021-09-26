@@ -13,6 +13,7 @@ public extension ImageAssets {
   enum Icons: String, ImageAsset {
     case failure = "icn_failure"
     case filter = "icn_filter"
+    case shuttle = "icn_shuttle"
     case success = "icn_success"
   }
   

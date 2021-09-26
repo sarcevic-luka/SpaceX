@@ -25,7 +25,7 @@ extension Resource {
       .build() ?? baseUrl
   }
   
-  #warning("Check for redundand variables")
+  #warning("Check for redundant variables")
   var isAuthorized: Bool { false }
   var method: HTTPMethod { .get }
   var queryItems: [URLQueryItem] { [] }

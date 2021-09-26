@@ -1,6 +1,7 @@
 {
-  "colors" : [
+  "images" : [
     {
+      "filename" : "icn_shuttle.png",
       "idiom" : "universal"
     }
   ],
