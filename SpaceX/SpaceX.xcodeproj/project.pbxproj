@@ -29,6 +29,7 @@
 		53F7CCC0270056E30005D88E /* LaunchListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCBF270056E30005D88E /* LaunchListCell.swift */; };
 		53F7CCC227008CDE0005D88E /* UIView-SpaceX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCC127008CDE0005D88E /* UIView-SpaceX.swift */; };
 		53F7CCC42700A2340005D88E /* LaunchListCompanyInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCC32700A2340005D88E /* LaunchListCompanyInfoCell.swift */; };
+		53F7CCC72700A4E10005D88E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCC62700A4E10005D88E /* HeaderView.swift */; };
 		53FD54D326FD0E2C00F43C9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD54D226FD0E2C00F43C9C /* AppDelegate.swift */; };
 		53FD54DC26FD0E2C00F43C9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53FD54DB26FD0E2C00F43C9C /* Assets.xcassets */; };
 		53FD54DF26FD0E2C00F43C9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53FD54DD26FD0E2C00F43C9C /* LaunchScreen.storyboard */; };
@@ -206,6 +207,7 @@
 		53F7CCBF270056E30005D88E /* LaunchListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListCell.swift; sourceTree = "<group>"; };
 		53F7CCC127008CDE0005D88E /* UIView-SpaceX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-SpaceX.swift"; sourceTree = "<group>"; };
 		53F7CCC32700A2340005D88E /* LaunchListCompanyInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListCompanyInfoCell.swift; sourceTree = "<group>"; };
+		53F7CCC62700A4E10005D88E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		53FD54CF26FD0E2C00F43C9C /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53FD54D226FD0E2C00F43C9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53FD54DB26FD0E2C00F43C9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -473,6 +475,7 @@
 		53F7CCB826FE92AF0005D88E /* Collection view */ = {
 			isa = PBXGroup;
 			children = (
+				53F7CCC52700A4D80005D88E /* Views */,
 				53F7CCB926FE92B60005D88E /* Layout */,
 			);
 			path = "Collection view";
@@ -485,6 +488,14 @@
 				53F7CCBC26FE92DA0005D88E /* CompositionalLayoutVendor.swift */,
 			);
 			path = Layout;
+			sourceTree = "<group>";
+		};
+		53F7CCC52700A4D80005D88E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				53F7CCC62700A4E10005D88E /* HeaderView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		53FD54C626FD0E2C00F43C9C = {
@@ -1055,6 +1066,7 @@
 				53F7CCA026FE8FE90005D88E /* NavigationBarSetupable.swift in Sources */,
 				53F7CC9C26FE8DDE0005D88E /* AppearanceCustomisationStartupProcess.swift in Sources */,
 				53F7CCAA26FE90960005D88E /* ReusableView.swift in Sources */,
+				53F7CCC72700A4E10005D88E /* HeaderView.swift in Sources */,
 				53F7CCC42700A2340005D88E /* LaunchListCompanyInfoCell.swift in Sources */,
 				53F7CCB026FE91430005D88E /* String-SpaceX.swift in Sources */,
 				53F7CCB426FE91860005D88E /* UIAplication-SpaceX.swift in Sources */,
