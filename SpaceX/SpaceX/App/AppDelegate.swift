@@ -15,7 +15,10 @@ class AppDelegate: UIResponder {
 extension AppDelegate: UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-    window?.rootViewController = LaunchListRouter.createModule(delegate: nil)
+    StartupProcessService()
+      .execute(process: AppearanceCustomisationStartupProcess())
+
+    window?.rootViewController = UINavigationController(rootViewController:LaunchListRouter.createModule(delegate: nil))
     window?.makeKeyAndVisible()
 
     return true
