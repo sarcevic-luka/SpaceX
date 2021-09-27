@@ -46,6 +46,9 @@
 		53F7CCF62701C04C0005D88E /* LaunchFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCF12701C04C0005D88E /* LaunchFiltersViewController.swift */; };
 		53F7CCF72701C04C0005D88E /* LaunchFiltersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCF22701C04C0005D88E /* LaunchFiltersInteractor.swift */; };
 		53F7CCFB2701C3E20005D88E /* LaunchListFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCFA2701C3E20005D88E /* LaunchListFilters.swift */; };
+		53F7CCFE2702744A0005D88E /* MessagePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCFD2702744A0005D88E /* MessagePopupView.swift */; };
+		53F7CD03270276A50005D88E /* MessagePopupViewEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CD02270276A50005D88E /* MessagePopupViewEnum.swift */; };
+		53F7CD05270277ED0005D88E /* MessagePopupViewPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CD04270277ED0005D88E /* MessagePopupViewPresentable.swift */; };
 		53FD54D326FD0E2C00F43C9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD54D226FD0E2C00F43C9C /* AppDelegate.swift */; };
 		53FD54DC26FD0E2C00F43C9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53FD54DB26FD0E2C00F43C9C /* Assets.xcassets */; };
 		53FD54DF26FD0E2C00F43C9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53FD54DD26FD0E2C00F43C9C /* LaunchScreen.storyboard */; };
@@ -240,6 +243,9 @@
 		53F7CCF12701C04C0005D88E /* LaunchFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFiltersViewController.swift; sourceTree = "<group>"; };
 		53F7CCF22701C04C0005D88E /* LaunchFiltersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFiltersInteractor.swift; sourceTree = "<group>"; };
 		53F7CCFA2701C3E20005D88E /* LaunchListFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListFilters.swift; sourceTree = "<group>"; };
+		53F7CCFD2702744A0005D88E /* MessagePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePopupView.swift; sourceTree = "<group>"; };
+		53F7CD02270276A50005D88E /* MessagePopupViewEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePopupViewEnum.swift; sourceTree = "<group>"; };
+		53F7CD04270277ED0005D88E /* MessagePopupViewPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePopupViewPresentable.swift; sourceTree = "<group>"; };
 		53FD54CF26FD0E2C00F43C9C /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53FD54D226FD0E2C00F43C9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53FD54DB26FD0E2C00F43C9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -575,6 +581,7 @@
 		53F7CCDC270158BF0005D88E /* Composite */ = {
 			isa = PBXGroup;
 			children = (
+				53F7CCFC2702743C0005D88E /* Message popup view */,
 				53F7CCDD270158D70005D88E /* StackedInfoView.swift */,
 			);
 			path = Composite;
@@ -606,6 +613,16 @@
 				53F7CCEE2701C04C0005D88E /* LaunchFiltersContentView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		53F7CCFC2702743C0005D88E /* Message popup view */ = {
+			isa = PBXGroup;
+			children = (
+				53F7CCFD2702744A0005D88E /* MessagePopupView.swift */,
+				53F7CD02270276A50005D88E /* MessagePopupViewEnum.swift */,
+				53F7CD04270277ED0005D88E /* MessagePopupViewPresentable.swift */,
+			);
+			path = "Message popup view";
 			sourceTree = "<group>";
 		};
 		53FD54C626FD0E2C00F43C9C = {
@@ -1177,6 +1194,7 @@
 				53F7CCA526FE90270005D88E /* DataSourceProtocol.swift in Sources */,
 				53F7CC8D26FE8BAE0005D88E /* LaunchListViewController.swift in Sources */,
 				53F7CCA326FE90000005D88E /* SectionProtocol.swift in Sources */,
+				53F7CD03270276A50005D88E /* MessagePopupViewEnum.swift in Sources */,
 				53F7CCE5270160A60005D88E /* Router.swift in Sources */,
 				53F7CCE7270163750005D88E /* UIViewController-SpaceX.swift in Sources */,
 				53F7CCA026FE8FE90005D88E /* NavigationBarSetupable.swift in Sources */,
@@ -1188,6 +1206,7 @@
 				53F7CCC72700A4E10005D88E /* HeaderView.swift in Sources */,
 				53F7CCC42700A2340005D88E /* LaunchListCompanyInfoCell.swift in Sources */,
 				53F7CCB026FE91430005D88E /* String-SpaceX.swift in Sources */,
+				53F7CCFE2702744A0005D88E /* MessagePopupView.swift in Sources */,
 				53F7CCB426FE91860005D88E /* UIAplication-SpaceX.swift in Sources */,
 				53F7CCC0270056E30005D88E /* LaunchListCell.swift in Sources */,
 				53F7CC9A26FE8DCF0005D88E /* StartupProcessService.swift in Sources */,
@@ -1202,6 +1221,7 @@
 				53FD54D326FD0E2C00F43C9C /* AppDelegate.swift in Sources */,
 				53F7CCCD2700C5A20005D88E /* LaunchListDataSource.swift in Sources */,
 				53F7CC8A26FE8BAE0005D88E /* LaunchListContentView.swift in Sources */,
+				53F7CD05270277ED0005D88E /* MessagePopupViewPresentable.swift in Sources */,
 				53F7CC8C26FE8BAE0005D88E /* LaunchListRouter.swift in Sources */,
 				53F7CCB626FE926D0005D88E /* UITableView-SpaceX.swift in Sources */,
 				53F7CCDA270157950005D88E /* AlertContentView.swift in Sources */,

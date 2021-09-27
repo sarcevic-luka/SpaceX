@@ -11,10 +11,12 @@ import Model
 
 protocol LaunchListDisplayLogic: AnyObject {
   func displayLaunchList(totalCount: Int, companyInfo: CompanyInfo, launchListItems: [LaunchDetailsItem])
+  func displayMessagePopup(with context: MessagePopupView.State)
   func displayPaginatedLaunchListItems(launchListItems: [LaunchDetailsItem], totalCount: Int)
 }
 
-class LaunchListViewController: UIViewController {
+class LaunchListViewController: UIViewController, MessagePopupViewPresentable {
+  var messagePopup: MessagePopupView?
   var presenter: LaunchListViewPresentingLogic?
   private var dataSource: LaunchListDataSource?
   private lazy var contentView = LaunchListContentView()
@@ -46,6 +48,10 @@ extension LaunchListViewController: LaunchListDisplayLogic {
     }
   }
   
+  func displayMessagePopup(with context: MessagePopupView.State) {
+    presentMessagePopup(MessagePopupView(context: context), completion: nil)
+  }
+
   func displayPaginatedLaunchListItems(launchListItems: [LaunchDetailsItem], totalCount: Int) {
     onMainThread {
       self.dataSource?.setLaunchList(launchListItems, totalCount: totalCount)
@@ -85,6 +91,8 @@ private extension LaunchListViewController {
     contentView.tableView.delegate = self
     contentView.tableView.prefetchDataSource = self
     contentView.tableView.isPrefetchingEnabled = true
+    contentView.tableView.rowHeight = UITableView.automaticDimension
+    contentView.tableView.estimatedRowHeight = 92
   }
   
   func setupNavigationBar() {
@@ -125,6 +133,10 @@ extension LaunchListViewController: UITableViewDataSource  {
       }
       return cell
     }
+  }
+  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    UITableView.automaticDimension
   }
 }
 

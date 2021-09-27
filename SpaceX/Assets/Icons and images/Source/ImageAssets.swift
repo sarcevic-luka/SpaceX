@@ -11,6 +11,8 @@ public struct ImageAssets { }
 
 public extension ImageAssets {
   enum Icons: String, ImageAsset {
+    case close = "icn_close_white"
+    case error = "icn_error"
     case failure = "icn_failure"
     case filter = "icn_filter"
     case shuttle = "icn_shuttle"

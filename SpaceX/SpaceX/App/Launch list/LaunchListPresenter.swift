@@ -65,9 +65,7 @@ extension LaunchListPresenter: LaunchListViewPresentingLogic {
         }
       }
       .catch { [weak self] error in
-#warning("Add message display")
-        print(error.localizedDescription)
-        //        self?.view?.displayMessagePopup(with: .customError(error.localizedDescription))
+        self?.view?.displayMessagePopup(with: .customError(error.localizedDescription))
       }
       .always { [weak self] in
         self?.isFetchInProgress = false
@@ -98,8 +96,7 @@ private extension LaunchListPresenter {
         return
       }
       .catch { [weak self] error in
-#warning("Add message display")
-        //        self?.view?.displayMessagePopup(with: .customError(error.localizedDescription))
+        self?.view?.displayMessagePopup(with: .customError(error.localizedDescription))
       }
       .always { [weak self] in
         self?.isFetchInProgress = false
