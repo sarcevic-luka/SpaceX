@@ -13,6 +13,7 @@ public extension ColorAssets {
   enum General: String, ColorAsset {
     case appBlack = "color_app_black"
     case gray = "color_gray"
+    case red = "color_red"
     case white = "color_white"
     
     public var color: UIColor {

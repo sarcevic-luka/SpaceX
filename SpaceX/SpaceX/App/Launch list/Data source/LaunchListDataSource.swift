@@ -53,6 +53,10 @@ extension LaunchListDataSource {
       sections.append(launchListSection)
     }
   }
+  
+  func launchDetails(at index: Int) -> LaunchDetailsItem? {
+   return launchListItems[index]
+  }
 }
 
 // MARK: - LaunchListDataSourceSection creation
@@ -64,7 +68,6 @@ private extension LaunchListDataSource {
 
   func createLaunchListSection() -> LaunchListDataSourceSection? {
     guard !launchListItems.isEmpty else { return nil }
-
     return .launchList("Launches".uppercased(), launchListItems.map { createLaunchListSection(with: $0) })
   }
 }

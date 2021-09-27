@@ -16,7 +16,7 @@ class AlertContentView: UIView {
   private lazy var infoView = StackedInfoView()
   private lazy var actionsStackView = UIStackView()
   private lazy var actionButton = UIButton(type: .system)
-  private let infoViewContainerWidthReference: CGFloat = 311
+  private let infoViewContainerWidthReference: CGFloat = 320 / 375
 
   init(title: String?, message: String?, attributedMessage: NSAttributedString? = nil, actions: [AlertAction]) {
     super.init(frame: .zero)
@@ -59,17 +59,18 @@ private extension AlertContentView {
     blurView.snp.makeConstraints {
       $0.edges.equalToSuperview()
     }
-    blurView.backgroundColor = UIColor(red: 208, green: 208, blue: 208, alpha: 0.6)
+    blurView.backgroundColor = ColorAssets.General.gray.color.withAlphaComponent(0.2)
   }
 
   func setupInfoViewContainer() {
     blurView.contentView.addSubview(infoViewContainer)
     infoViewContainer.snp.makeConstraints {
       $0.center.equalToSuperview()
-      $0.width.equalToSuperview().multipliedBy(infoViewContainerWidthReference / 375.0)
+      $0.width.equalToSuperview().multipliedBy(infoViewContainerWidthReference)
     }
-    infoViewContainer.backgroundColor = .white
+    infoViewContainer.backgroundColor = ColorAssets.General.white.color
     infoViewContainer.layer.cornerRadius = 16
+    infoViewContainer.clipsToBounds = true
   }
 
   func setupInfoView() {
@@ -80,12 +81,8 @@ private extension AlertContentView {
       $0.top.equalToSuperview().inset(32)
     }
     infoView.spacing = 12
-//    infoView.titleFont = .systemFont(ofSize: 24, weight: .bold)
-//    infoView.titleColor = .black
     infoView.titleAlignmnent = .center
     infoView.titleNumberOfLines = 0
-//    infoView.subtitleFont = .systemFont(ofSize: 16, weight: .medium)
-//    infoView.subtitleColor = ColorAssets.General.ditorio.color
     infoView.subtitleAlignmnent = .center
     infoView.subtitleNumberOfLines = 0
   }
@@ -129,13 +126,13 @@ private extension AlertAction.Style {
   var actionTitleColor: UIColor {
     switch self {
     case .default:
-      return ColorAssets.General.appBlack.color
+      return ColorAssets.General.red.color
     case .preferred:
       return ColorAssets.General.appBlack.color
     }
   }
 
   var actionTitleFont: UIFont {
-    .systemFont(ofSize: 16, weight: .semibold)
+    .appFont(size: 16, weight: .medium)
   }
 }

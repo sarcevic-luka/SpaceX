@@ -11,13 +11,13 @@ public struct LinkDetails {
   public let missionBanner: URL?
   public let articleLink: URL?
   public let wikipediaLink: URL?
-  public let youtubeLink: URL?
+  public let videoLink: URL?
   
   private enum CodingKeys: String, CodingKey {
     case missionBanner = "mission_patch_small"
     case articleLink = "article_link"
     case wikipediaLink = "wikipedia"
-    case youtubeLink = "video_link"
+    case videoLink = "video_link"
   }
 }
 

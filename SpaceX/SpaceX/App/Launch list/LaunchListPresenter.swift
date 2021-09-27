@@ -32,7 +32,8 @@ class LaunchListPresenter {
 // MARK: - LaunchListViewPresentingLogic
 extension LaunchListPresenter: LaunchListViewPresentingLogic {
   func onItemSelected(at indexPath: IndexPath) {
-    #warning("Add here pickerView")
+    guard let details = dataSource?.launchDetails(at: indexPath.row) else { return }
+    router.showLaunchDetails(for: details)
   }
   
   func onPrefetchRequested() {

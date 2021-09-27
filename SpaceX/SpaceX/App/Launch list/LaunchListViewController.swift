@@ -116,7 +116,6 @@ extension LaunchListViewController: UITableViewDataSource  {
 }
 
 extension LaunchListViewController: UITableViewDelegate {
-  
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     guard let listSection = dataSource?.section(at: section) else { return UIView() }
     let header = tableView.dequeueReusableHeaderFooterView(HeaderView.self)
@@ -125,6 +124,10 @@ extension LaunchListViewController: UITableViewDelegate {
       header.titleText = title
     }
     return header
+  }
+  
+  func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    presenter?.onItemSelected(at: indexPath)
   }
 }
 

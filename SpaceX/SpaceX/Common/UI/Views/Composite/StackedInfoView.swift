@@ -113,7 +113,7 @@ private extension StackedInfoView {
 
   func setupTitleLabel() {
     stackView.addArrangedSubview(titleLabel)
-    titleLabel.font = .appFont(size: 16, weight: .bold)
+    titleLabel.font = .appFont(size: 18, weight: .bold)
     titleLabel.textColor = ColorAssets.General.appBlack.color
     titleLabel.setContentHuggingPriority(.defaultLow + 1, for: .horizontal)
     titleLabel.setContentHuggingPriority(.defaultLow + 1, for: .vertical)

@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import SafariServices
+import Model
+import Promises
 
-protocol LaunchListRoutingLogic: AnyObject { }
+protocol LaunchListRoutingLogic: AnyObject {
+  func showLaunchDetails(for launch: LaunchDetailsItem)
+}
 
-protocol LaunchListRouterDelegate: AnyObject { }
+protocol LaunchListRouterDelegate: AnyObject {
+  func launchDetailsRequested(action: AlertAction.LaunchList)
+}
 
-class LaunchListRouter {
+class LaunchListRouter: Router {
   weak var viewController: LaunchListViewController?
   weak var delegate: LaunchListRouterDelegate?
   
@@ -29,4 +36,44 @@ class LaunchListRouter {
 }
 
 // MARK: - LaunchListRoutingLogic
-extension LaunchListRouter: LaunchListRoutingLogic { }
+extension LaunchListRouter: LaunchListRoutingLogic {
+  func showLaunchDetails(for launch: LaunchDetailsItem) {
+    showAlert(.launchDetails(
+      title: launch.missionName,
+      articleHandler: { [weak self] in
+        self?.viewController?
+          .dismiss(animated: true)
+          .then { [weak self] in
+            self?.open(launchURL: launch.links.articleLink)
+          }
+      },
+      videoHandler: { [weak self] in
+        self?.viewController?
+          .dismiss(animated: true)
+          .then { [weak self] in
+            self?.open(launchURL: launch.links.videoLink)
+          }
+      },
+      wikiHandler: { [weak self] in
+        self?.viewController?
+          .dismiss(animated: true)
+          .then { [weak self] in
+            self?.open(launchURL: launch.links.wikipediaLink)
+          }
+      }, cancelHandler: { [weak self] in
+        self?.viewController?
+          .dismiss(animated: true)
+      }))
+  }
+}
+
+private extension LaunchListRouter {
+  func open(launchURL: URL?) {
+    if let url = launchURL {
+      let config = SFSafariViewController.Configuration()
+      config.entersReaderIfAvailable = true
+      let vc = SFSafariViewController(url: url, configuration: config)
+      viewController?.present(vc, animated: true)
+    }
+  }
+}
