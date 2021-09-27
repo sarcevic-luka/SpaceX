@@ -23,13 +23,14 @@
 		53F7CCAE26FE90EB0005D88E /* Collection-SpaceX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCAD26FE90EB0005D88E /* Collection-SpaceX.swift */; };
 		53F7CCB026FE91430005D88E /* String-SpaceX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCAF26FE91430005D88E /* String-SpaceX.swift */; };
 		53F7CCB426FE91860005D88E /* UIAplication-SpaceX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCB326FE91860005D88E /* UIAplication-SpaceX.swift */; };
-		53F7CCB626FE926D0005D88E /* UICollectionView-SpaceX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCB526FE926D0005D88E /* UICollectionView-SpaceX.swift */; };
-		53F7CCBB26FE92C50005D88E /* ListLayoutVendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCBA26FE92C50005D88E /* ListLayoutVendor.swift */; };
-		53F7CCBD26FE92DA0005D88E /* CompositionalLayoutVendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCBC26FE92DA0005D88E /* CompositionalLayoutVendor.swift */; };
+		53F7CCB626FE926D0005D88E /* UITableView-SpaceX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCB526FE926D0005D88E /* UITableView-SpaceX.swift */; };
 		53F7CCC0270056E30005D88E /* LaunchListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCBF270056E30005D88E /* LaunchListCell.swift */; };
 		53F7CCC227008CDE0005D88E /* UIView-SpaceX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCC127008CDE0005D88E /* UIView-SpaceX.swift */; };
 		53F7CCC42700A2340005D88E /* LaunchListCompanyInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCC32700A2340005D88E /* LaunchListCompanyInfoCell.swift */; };
 		53F7CCC72700A4E10005D88E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCC62700A4E10005D88E /* HeaderView.swift */; };
+		53F7CCCD2700C5A20005D88E /* LaunchListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCCC2700C5A20005D88E /* LaunchListDataSource.swift */; };
+		53F7CCCF2700C7590005D88E /* TimeDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCCE2700C7590005D88E /* TimeDateFormatter.swift */; };
+		53F7CCD12700FF560005D88E /* LaunchListHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCD02700FF560005D88E /* LaunchListHeaderModel.swift */; };
 		53FD54D326FD0E2C00F43C9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD54D226FD0E2C00F43C9C /* AppDelegate.swift */; };
 		53FD54DC26FD0E2C00F43C9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53FD54DB26FD0E2C00F43C9C /* Assets.xcassets */; };
 		53FD54DF26FD0E2C00F43C9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53FD54DD26FD0E2C00F43C9C /* LaunchScreen.storyboard */; };
@@ -201,13 +202,14 @@
 		53F7CCAD26FE90EB0005D88E /* Collection-SpaceX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection-SpaceX.swift"; sourceTree = "<group>"; };
 		53F7CCAF26FE91430005D88E /* String-SpaceX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-SpaceX.swift"; sourceTree = "<group>"; };
 		53F7CCB326FE91860005D88E /* UIAplication-SpaceX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAplication-SpaceX.swift"; sourceTree = "<group>"; };
-		53F7CCB526FE926D0005D88E /* UICollectionView-SpaceX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView-SpaceX.swift"; sourceTree = "<group>"; };
-		53F7CCBA26FE92C50005D88E /* ListLayoutVendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLayoutVendor.swift; sourceTree = "<group>"; };
-		53F7CCBC26FE92DA0005D88E /* CompositionalLayoutVendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalLayoutVendor.swift; sourceTree = "<group>"; };
+		53F7CCB526FE926D0005D88E /* UITableView-SpaceX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView-SpaceX.swift"; sourceTree = "<group>"; };
 		53F7CCBF270056E30005D88E /* LaunchListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListCell.swift; sourceTree = "<group>"; };
 		53F7CCC127008CDE0005D88E /* UIView-SpaceX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-SpaceX.swift"; sourceTree = "<group>"; };
 		53F7CCC32700A2340005D88E /* LaunchListCompanyInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListCompanyInfoCell.swift; sourceTree = "<group>"; };
 		53F7CCC62700A4E10005D88E /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		53F7CCCC2700C5A20005D88E /* LaunchListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListDataSource.swift; sourceTree = "<group>"; };
+		53F7CCCE2700C7590005D88E /* TimeDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeDateFormatter.swift; sourceTree = "<group>"; };
+		53F7CCD02700FF560005D88E /* LaunchListHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListHeaderModel.swift; sourceTree = "<group>"; };
 		53FD54CF26FD0E2C00F43C9C /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53FD54D226FD0E2C00F43C9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53FD54DB26FD0E2C00F43C9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 		53F7CC8426FE8B980005D88E /* Launch list */ = {
 			isa = PBXGroup;
 			children = (
+				53F7CCCB2700C5970005D88E /* Data source */,
 				53F7CC8F26FE8BB10005D88E /* View */,
 				53F7CC8926FE8BAE0005D88E /* LaunchListInteractor.swift */,
 				53F7CC8626FE8BAE0005D88E /* LaunchListPresenter.swift */,
@@ -386,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				53F7CC9626FE8DAA0005D88E /* Startup services */,
+				53F7CCCE2700C7590005D88E /* TimeDateFormatter.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -458,7 +462,7 @@
 			isa = PBXGroup;
 			children = (
 				53F7CCB326FE91860005D88E /* UIAplication-SpaceX.swift */,
-				53F7CCB526FE926D0005D88E /* UICollectionView-SpaceX.swift */,
+				53F7CCB526FE926D0005D88E /* UITableView-SpaceX.swift */,
 				53F7CCC127008CDE0005D88E /* UIView-SpaceX.swift */,
 			);
 			path = UIKit;
@@ -467,27 +471,17 @@
 		53F7CCB726FE92A80005D88E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				53F7CCB826FE92AF0005D88E /* Collection view */,
+				53F7CCB826FE92AF0005D88E /* Table view */,
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
-		53F7CCB826FE92AF0005D88E /* Collection view */ = {
+		53F7CCB826FE92AF0005D88E /* Table view */ = {
 			isa = PBXGroup;
 			children = (
 				53F7CCC52700A4D80005D88E /* Views */,
-				53F7CCB926FE92B60005D88E /* Layout */,
 			);
-			path = "Collection view";
-			sourceTree = "<group>";
-		};
-		53F7CCB926FE92B60005D88E /* Layout */ = {
-			isa = PBXGroup;
-			children = (
-				53F7CCBA26FE92C50005D88E /* ListLayoutVendor.swift */,
-				53F7CCBC26FE92DA0005D88E /* CompositionalLayoutVendor.swift */,
-			);
-			path = Layout;
+			path = "Table view";
 			sourceTree = "<group>";
 		};
 		53F7CCC52700A4D80005D88E /* Views */ = {
@@ -496,6 +490,14 @@
 				53F7CCC62700A4E10005D88E /* HeaderView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		53F7CCCB2700C5970005D88E /* Data source */ = {
+			isa = PBXGroup;
+			children = (
+				53F7CCCC2700C5A20005D88E /* LaunchListDataSource.swift */,
+			);
+			path = "Data source";
 			sourceTree = "<group>";
 		};
 		53FD54C626FD0E2C00F43C9C = {
@@ -669,6 +671,7 @@
 				53FD554326FE001900F43C9C /* LaunchDetailsItem.swift */,
 				53FD554726FE02F500F43C9C /* LinkDetails.swift */,
 				53FD554526FE012900F43C9C /* RocketDetails.swift */,
+				53F7CCD02700FF560005D88E /* LaunchListHeaderModel.swift */,
 			);
 			path = "Launch list";
 			sourceTree = "<group>";
@@ -1064,6 +1067,7 @@
 				53F7CC8D26FE8BAE0005D88E /* LaunchListViewController.swift in Sources */,
 				53F7CCA326FE90000005D88E /* SectionProtocol.swift in Sources */,
 				53F7CCA026FE8FE90005D88E /* NavigationBarSetupable.swift in Sources */,
+				53F7CCCF2700C7590005D88E /* TimeDateFormatter.swift in Sources */,
 				53F7CC9C26FE8DDE0005D88E /* AppearanceCustomisationStartupProcess.swift in Sources */,
 				53F7CCAA26FE90960005D88E /* ReusableView.swift in Sources */,
 				53F7CCC72700A4E10005D88E /* HeaderView.swift in Sources */,
@@ -1077,12 +1081,11 @@
 				53F7CC8B26FE8BAE0005D88E /* LaunchListPresenter.swift in Sources */,
 				53F7CCAE26FE90EB0005D88E /* Collection-SpaceX.swift in Sources */,
 				53FD54D326FD0E2C00F43C9C /* AppDelegate.swift in Sources */,
+				53F7CCCD2700C5A20005D88E /* LaunchListDataSource.swift in Sources */,
 				53F7CC8A26FE8BAE0005D88E /* LaunchListContentView.swift in Sources */,
 				53F7CC8C26FE8BAE0005D88E /* LaunchListRouter.swift in Sources */,
-				53F7CCBB26FE92C50005D88E /* ListLayoutVendor.swift in Sources */,
-				53F7CCB626FE926D0005D88E /* UICollectionView-SpaceX.swift in Sources */,
+				53F7CCB626FE926D0005D88E /* UITableView-SpaceX.swift in Sources */,
 				53F7CC8E26FE8BAE0005D88E /* LaunchListInteractor.swift in Sources */,
-				53F7CCBD26FE92DA0005D88E /* CompositionalLayoutVendor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1109,6 +1112,7 @@
 				53FD554826FE02F500F43C9C /* LinkDetails.swift in Sources */,
 				53FD554C26FE079900F43C9C /* CompanyInfo.swift in Sources */,
 				53FD553926FDFAAC00F43C9C /* Model.docc in Sources */,
+				53F7CCD12700FF560005D88E /* LaunchListHeaderModel.swift in Sources */,
 				53FD554626FE012900F43C9C /* RocketDetails.swift in Sources */,
 				53FD554426FE001900F43C9C /* LaunchDetailsItem.swift in Sources */,
 			);
@@ -1373,7 +1377,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VJVL8D83F6;
+				DEVELOPMENT_TEAM = 69AX8GLMBG;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1390,9 +1394,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = luka.sarcevic.Assets;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1404,7 +1409,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VJVL8D83F6;
+				DEVELOPMENT_TEAM = 69AX8GLMBG;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1421,9 +1426,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = luka.sarcevic.Assets;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1435,7 +1441,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VJVL8D83F6;
+				DEVELOPMENT_TEAM = 69AX8GLMBG;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1465,7 +1471,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VJVL8D83F6;
+				DEVELOPMENT_TEAM = 69AX8GLMBG;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1496,7 +1502,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VJVL8D83F6;
+				DEVELOPMENT_TEAM = 69AX8GLMBG;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1528,7 +1534,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VJVL8D83F6;
+				DEVELOPMENT_TEAM = 69AX8GLMBG;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1558,7 +1564,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VJVL8D83F6;
+				DEVELOPMENT_TEAM = 69AX8GLMBG;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1588,7 +1594,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VJVL8D83F6;
+				DEVELOPMENT_TEAM = 69AX8GLMBG;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

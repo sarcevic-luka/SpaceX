@@ -11,7 +11,7 @@ import Promises
 import Alamofire
 
 public protocol LaunchListNetworkServiceProtocol {
-  func getLaunchList(offset: Int, limit: Int) -> Promise<[LaunchDetailsItem]>
+  func getLaunchList(offset: Int, limit: Int) -> Promise<(listItems: [LaunchDetailsItem], totalCount: Int)>
   func getCompanyInfo() -> Promise<CompanyInfo>
 }
 
@@ -20,7 +20,7 @@ public final class LaunchListNetworkService {
 }
 
 extension LaunchListNetworkService: LaunchListNetworkServiceProtocol {
-  public func getLaunchList(offset: Int, limit: Int) -> Promise<[LaunchDetailsItem]> {
+  public func getLaunchList(offset: Int, limit: Int) -> Promise<(listItems: [LaunchDetailsItem], totalCount: Int)> {
     Promise { fullfill, reject in
       Networking.session
         .request(resource: LaunchListResource.getLaunchList(offset: offset, limit: limit))
@@ -28,7 +28,14 @@ extension LaunchListNetworkService: LaunchListNetworkServiceProtocol {
         .responseDecodable(decoder: JSONDecoder.default) { (response: DataResponse<[LaunchDetailsItem], AFError>) in
           switch response.result {
           case .success(let data):
-            fullfill(data)
+            do {
+              let jsonData = try JSONSerialization.data(withJSONObject: response.response?.allHeaderFields as Any, options: .prettyPrinted)
+              let headerModel = try JSONDecoder().decode(LaunchListHeaderModel.self, from: jsonData)
+              let totalCount: Int = Int(headerModel.totalCount) ?? 0
+              fullfill((listItems: data, totalCount: totalCount))
+            } catch {
+              reject(error)
+            }
           case .failure(let error):
             reject(error)
           }

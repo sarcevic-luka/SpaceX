@@ -8,7 +8,7 @@
 import Foundation
 
 public struct LinkDetails {
-  public let missionBanner: String
+  public let missionBanner: URL?
   public let articleLink: URL?
   public let wikipediaLink: URL?
   public let youtubeLink: URL?
