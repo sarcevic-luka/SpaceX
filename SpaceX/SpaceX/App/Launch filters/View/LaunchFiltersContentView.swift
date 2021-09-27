@@ -13,7 +13,7 @@ import SnapKit
 class LaunchFiltersContentView: UIView {
   var yearsSliderHandler: ParametrisedAction<Int?>?
   var filterBySuccessfulLaunch: ParametrisedAction<Bool?>?
-  var sortByAsscending: ParametrisedAction<String?>?
+  var sortByAscending: ParametrisedAction<String?>?
   var applyFilterTapHandler: Action?
   var cancelTapHandler: Action?
   private lazy var blurView = UIVisualEffectView(effect: blurEffect)
@@ -36,7 +36,7 @@ class LaunchFiltersContentView: UIView {
   // success/failed - switch
   private lazy var successfulLaunchIndicatorHorizontalStackView = UIStackView()
   private lazy var successfulLaunchIndicatorLabel = UILabel()
-  private lazy var successfulFaliureSwitch = UISwitch()
+  private lazy var launchSuccessIndicatorSwitch = UISwitch()
   // sorting - switch
   private lazy var sortHorizontalStackView = UIStackView()
   private lazy var sortTitleLabel = UILabel()
@@ -52,6 +52,35 @@ class LaunchFiltersContentView: UIView {
   
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+}
+
+extension LaunchFiltersContentView {
+  func setOnSelectedFilter(with year: Int?) {
+    guard let selectedYear = year else { return }
+    yearsSwitch.isOn = true
+    yearsSlider.value = Float(selectedYear)
+    selectedYearLabel.text = " year: \(selectedYear)"
+    yearsSliderHorizontalStackView.fadeIn(0)
+  }
+  
+  func setOnFilter(succesfulLaunch: Bool?) {
+    guard let successfulLaunchFilter = succesfulLaunch else { return }
+    successfulLaunchSwitch.isOn = true
+    launchSuccessIndicatorSwitch.isOn = successfulLaunchFilter
+    successfulLaunchIndicatorHorizontalStackView.fadeIn()
+    successfulLaunchIndicatorLabel.fadeIn()
+    filterBySuccessfulLaunch?(launchSuccessIndicatorSwitch.isOn)
+  }
+  
+  func setCurrent(sortingRule: String?) {
+    if sortingRule == "desc" {
+      sortSwitch.isOn = false
+      sortTitleLabel.text = "- sort: Descending"
+    } else {
+      sortSwitch.isOn = true
+      sortTitleLabel.text = "- sort: Ascending"
+    }
   }
 }
 
@@ -75,7 +104,7 @@ private extension LaunchFiltersContentView {
     if sender.isOn {
       successfulLaunchIndicatorHorizontalStackView.fadeIn()
       successfulLaunchIndicatorLabel.fadeIn()
-      filterBySuccessfulLaunch?(successfulFaliureSwitch.isOn)
+      filterBySuccessfulLaunch?(launchSuccessIndicatorSwitch.isOn)
     } else {
       filterBySuccessfulLaunch?(nil)
       successfulLaunchIndicatorLabel.fadeOut()
@@ -89,7 +118,7 @@ private extension LaunchFiltersContentView {
   }
 
   @objc func sortValueChanged(_ sender: UISwitch) {
-    sortByAsscending?(sender.isOn ? "asc" : "desc")
+    sortByAscending?(sender.isOn ? "asc" : "desc")
     sortTitleLabel.text = sender.isOn ? "- sort: Ascending" : "- sort: Descending"
   }
 
@@ -226,10 +255,10 @@ private extension LaunchFiltersContentView {
   }
   
   func setupSuccessfulFaliureSwitch() {
-    successfulLaunchIndicatorHorizontalStackView.addArrangedSubview(successfulFaliureSwitch)
-    successfulFaliureSwitch.isOn = true
-    successfulFaliureSwitch.onTintColor = ColorAssets.General.appBlack.color
-    successfulFaliureSwitch.addTarget(self, action: #selector(launchValueChanged(_:)), for: .touchUpInside)
+    successfulLaunchIndicatorHorizontalStackView.addArrangedSubview(launchSuccessIndicatorSwitch)
+    launchSuccessIndicatorSwitch.isOn = true
+    launchSuccessIndicatorSwitch.onTintColor = ColorAssets.General.appBlack.color
+    launchSuccessIndicatorSwitch.addTarget(self, action: #selector(launchValueChanged(_:)), for: .touchUpInside)
   }
   
   func setupSortTitleLabel() {
@@ -248,9 +277,11 @@ private extension LaunchFiltersContentView {
   
   func setupCancelButton() {
     verticalStackView.addArrangedSubview(cancelButton)
+    verticalStackView.setCustomSpacing(16, after: sortHorizontalStackView)
     cancelButton.setTitle("Cancel", for: .normal)
     cancelButton.addTarget(self, action: #selector(cancelButtonTapped(_:)), for: .touchUpInside)
     cancelButton.setTitleColor(ColorAssets.General.red.color, for: .normal)
+    cancelButton.titleLabel?.font = .appFont(size: 16, weight: .bold)
   }
   
   func setupFilterButton() {
@@ -258,5 +289,6 @@ private extension LaunchFiltersContentView {
     filterButton.setTitle("Filter", for: .normal)
     filterButton.addTarget(self, action: #selector(filterButtonTapped(_:)), for: .touchUpInside)
     filterButton.setTitleColor(ColorAssets.General.appBlack.color, for: .normal)
+    filterButton.titleLabel?.font = .appFont(size: 16, weight: .bold)
   }
 }

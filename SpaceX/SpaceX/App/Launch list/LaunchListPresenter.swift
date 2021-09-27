@@ -8,12 +8,14 @@
 
 import Foundation
 import Model
+import Promises
 
 protocol LaunchListViewPresentingLogic: AnyObject {
   func onItemSelected(at indexPath: IndexPath)
   func onFilterButtonTapped()
+  func onFetchFreshLaunchList(filters: LaunchListFilters)
   func onPrefetchRequested()
-  func refreshControlValueChanged()
+  func onRefreshControlValueChanged()
   func onViewDidLoad()
 }
 
@@ -21,6 +23,7 @@ class LaunchListPresenter {
   var interactor: LaunchListBusinessLogic?
   weak private var view: LaunchListDisplayLogic?
   private var dataSource: LaunchListDataSource?
+  private var queryParams: LaunchListFilters
   private var isFetchInProgress = false
   private let router: LaunchListRoutingLogic
   
@@ -28,6 +31,7 @@ class LaunchListPresenter {
     self.view = interface
     self.interactor = interactor
     self.router = router
+    self.queryParams = LaunchListFilters(offset: 0, limit: 15)
   }
 }
 
@@ -39,25 +43,29 @@ extension LaunchListPresenter: LaunchListViewPresentingLogic {
   }
   
   func onFilterButtonTapped() {
-    guard let activeFilters = dataSource?.queryParams else { return }
-    router.showFilterSelection(with: activeFilters)
+    router.showFilterSelection(with: queryParams)
   }
-
+  
+  func onFetchFreshLaunchList(filters: LaunchListFilters) {
+    queryParams = filters
+    fetchAndPresentLaunchList()
+  }
+  
   func onPrefetchRequested() {
     if isFetchInProgress { return }
+    queryParams.offset = dataSource?.currentOffset() ?? 0
     isFetchInProgress = true
-    guard let params = dataSource?.queryParams else { return }
-    interactor?.getLaunchList(queryParams: params)
+    interactor?.getLaunchList(queryParams: queryParams)
       .then { [weak self] (launchList, totalCount) in
         onMainThread {
           guard let strongSelf = self else { return }
-          strongSelf.dataSource?.setLaunchList(launchList)
-          strongSelf.view?.displayLaunchList(totalCount: totalCount, companyInfo: nil, launchListItems: launchList)
+          strongSelf.dataSource?.setLaunchList(launchList, totalCount: totalCount)
+          strongSelf.view?.displayPaginatedLaunchListItems(launchListItems: launchList, totalCount: totalCount)
           return
         }
       }
       .catch { [weak self] error in
-          #warning("Add message display")
+#warning("Add message display")
         print(error.localizedDescription)
         //        self?.view?.displayMessagePopup(with: .customError(error.localizedDescription))
       }
@@ -66,7 +74,7 @@ extension LaunchListPresenter: LaunchListViewPresentingLogic {
       }
   }
   
-  func refreshControlValueChanged() {
+  func onRefreshControlValueChanged() {
     fetchAndPresentLaunchList()
   }
   
@@ -79,9 +87,12 @@ private extension LaunchListPresenter {
   func fetchAndPresentLaunchList() {
     if isFetchInProgress { return }
     isFetchInProgress = true
-    interactor?.getAllData()
+    
+    interactor?.getAllData(queryParams: queryParams)
       .then { [weak self] (launchList, companyInfo, totalCount) in
         guard let strongSelf = self else { return }
+        strongSelf.dataSource = nil
+        strongSelf.dataSource?.clearList()
         strongSelf.dataSource = LaunchListDataSource(totalCount: totalCount, companyInfo: companyInfo, launchListItems: launchList)
         strongSelf.view?.displayLaunchList(totalCount: totalCount, companyInfo: companyInfo, launchListItems: launchList)
         return

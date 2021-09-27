@@ -8,11 +8,11 @@
 import Foundation
 
 public class LaunchListFilters {
-  public let offset: Int
-  public let limit: Int
-  public let launchYear: Int?
-  public let launchSuccess: Bool?
-  public let order: String?
+  public var offset: Int
+  public var limit: Int
+  public var launchYear: Int?
+  public var launchSuccess: Bool?
+  public var order: String?
 
   public init(offset: Int, limit: Int, launchYear: Int? = nil, launchSuccess: Bool? = nil, order: String? = "") {
     self.offset = offset

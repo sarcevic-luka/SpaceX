@@ -85,5 +85,13 @@ private extension LaunchListRouter {
 }
 
 extension LaunchListRouter: LaunchFiltersRouterDelegate {
+  func launchFiltersRouterRequestedDismissal() {
+    viewController?.dismiss(animated: true)
+  }
   
+  func applyFilter(filter: LaunchListFilters) {
+    viewController?.dismiss(animated: true, completion: { [weak self] in
+      self?.viewController?.reloadData(with: filter)
+    })
+  }
 }

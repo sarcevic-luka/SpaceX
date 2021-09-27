@@ -9,9 +9,15 @@
 import UIKit
 import Model
 
-protocol LaunchFiltersRoutingLogic: AnyObject { }
+protocol LaunchFiltersRoutingLogic: AnyObject {
+  func dismiss()
+  func updateFilterParams(filter: LaunchListFilters)
+}
 
-protocol LaunchFiltersRouterDelegate: AnyObject { }
+protocol LaunchFiltersRouterDelegate: AnyObject {
+  func launchFiltersRouterRequestedDismissal()
+  func applyFilter(filter: LaunchListFilters)
+}
 
 class LaunchFiltersRouter {
   weak var viewController: LaunchFiltersViewController?
@@ -30,4 +36,12 @@ class LaunchFiltersRouter {
 }
 
 // MARK: - LaunchFiltersRoutingLogic
-extension LaunchFiltersRouter: LaunchFiltersRoutingLogic { }
+extension LaunchFiltersRouter: LaunchFiltersRoutingLogic {
+  func dismiss() {
+    delegate?.launchFiltersRouterRequestedDismissal()
+  }
+  
+  func updateFilterParams(filter: LaunchListFilters) {
+    delegate?.applyFilter(filter: filter)
+  }
+}

@@ -10,7 +10,8 @@ import UIKit
 import Model
 
 protocol LaunchListDisplayLogic: AnyObject {
-  func displayLaunchList(totalCount: Int, companyInfo: CompanyInfo?, launchListItems: [LaunchDetailsItem])
+  func displayLaunchList(totalCount: Int, companyInfo: CompanyInfo, launchListItems: [LaunchDetailsItem])
+  func displayPaginatedLaunchListItems(launchListItems: [LaunchDetailsItem], totalCount: Int)
 }
 
 class LaunchListViewController: UIViewController {
@@ -21,7 +22,7 @@ class LaunchListViewController: UIViewController {
   override func loadView() {
     view = contentView
   }
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
@@ -36,21 +37,28 @@ class LaunchListViewController: UIViewController {
 
 // MARK: - LaunchListDisplayLogic
 extension LaunchListViewController: LaunchListDisplayLogic {
-  func displayLaunchList(totalCount: Int, companyInfo: CompanyInfo?, launchListItems: [LaunchDetailsItem]) {
+  func displayLaunchList(totalCount: Int, companyInfo: CompanyInfo, launchListItems: [LaunchDetailsItem]) {
     onMainThread {
-      if self.dataSource == nil || companyInfo != nil {
-        self.dataSource = LaunchListDataSource(totalCount: totalCount, companyInfo: companyInfo, launchListItems: launchListItems)
-        self.contentView.tableView.reloadData()
-        self.contentView.tableView.refreshControl?.endRefreshing()
-      } else {
-        self.dataSource?.setLaunchList(launchListItems)
-        guard let indexPathsForReload = self.dataSource?.calculateIndexPathsToReload(from: launchListItems) else {
-          return
-        }
-        self.contentView.tableView.refreshControl?.endRefreshing()
-        self.contentView.tableView.reloadRows(at: indexPathsForReload, with: .automatic)
-      }
+      self.dataSource?.clearList()
+      self.dataSource = LaunchListDataSource(totalCount: totalCount, companyInfo: companyInfo, launchListItems: launchListItems)
+      self.contentView.tableView.reloadData()
+      self.contentView.tableView.refreshControl?.endRefreshing()
     }
+  }
+  
+  func displayPaginatedLaunchListItems(launchListItems: [LaunchDetailsItem], totalCount: Int) {
+    onMainThread {
+      self.dataSource?.setLaunchList(launchListItems, totalCount: totalCount)
+      guard let indexPathsForReload = self.dataSource?.calculateIndexPathsToReload(from: launchListItems) else {
+        return
+      }
+      self.contentView.tableView.refreshControl?.endRefreshing()
+      self.contentView.tableView.reloadRows(at: indexPathsForReload, with: .automatic)
+    }
+  }
+  
+  func reloadData(with filters: LaunchListFilters) {
+    presenter?.onFetchFreshLaunchList(filters: filters)
   }
 }
 
@@ -68,23 +76,22 @@ private extension LaunchListViewController {
   
   func setupContentView() {
     contentView.refreshControlRefreshHandler = { [weak self] in
-      self?.presenter?.refreshControlValueChanged()
+      self?.presenter?.onRefreshControlValueChanged()
     }
   }
-   
+  
   func setupTableView() {
     contentView.tableView.dataSource = self
     contentView.tableView.delegate = self
     contentView.tableView.prefetchDataSource = self
     contentView.tableView.isPrefetchingEnabled = true
-    }
+  }
   
   func setupNavigationBar() {
     navigationItem.title = "SpaceX"
     navigationItem.rightBarButtonItem = .filterButton(target: self, action: #selector(filterButtonTapped))
   }
 }
-
 
 extension LaunchListViewController: UITableViewDataSource  {
   func numberOfSections(in tableView: UITableView) -> Int {
@@ -132,7 +139,7 @@ extension LaunchListViewController: UITableViewDelegate {
     return header
   }
   
-  func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     presenter?.onItemSelected(at: indexPath)
   }
 }

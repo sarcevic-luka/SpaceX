@@ -9,7 +9,14 @@
 import Foundation
 import Model
 
-protocol LaunchFiltersViewPresentingLogic: AnyObject { }
+protocol LaunchFiltersViewPresentingLogic: AnyObject {
+  func onApplyFilterSelected()
+  func onCancelSelected()
+  func onFilterByLaunchSelected(successfulOnly: Bool?)
+  func onYearFilterSelected(yearValue: Int?)
+  func onSort(byAsscending: String?)
+  func onViewLoaded()
+}
 
 class LaunchFiltersPresenter {
   var interactor: LaunchFiltersBusinessLogic?
@@ -26,4 +33,37 @@ class LaunchFiltersPresenter {
 }
 
 // MARK: - LaunchFiltersViewPresentingLogic
-extension LaunchFiltersPresenter: LaunchFiltersViewPresentingLogic { }
+extension LaunchFiltersPresenter: LaunchFiltersViewPresentingLogic {
+  func onViewLoaded() {
+    displayInitial(filters: activeFilters)
+  }
+  
+  func onYearFilterSelected(yearValue: Int?) {
+    activeFilters.launchYear = yearValue
+  }
+  
+  func onFilterByLaunchSelected(successfulOnly: Bool?) {
+    activeFilters.launchSuccess = successfulOnly
+  }
+  
+  func onSort(byAsscending: String?) {
+    activeFilters.order = byAsscending
+  }
+  
+  func onApplyFilterSelected() {
+    router.updateFilterParams(filter: activeFilters)
+  }
+  
+  func onCancelSelected() {
+    router.dismiss()
+  }
+}
+
+// MARK: - Private Methods
+private extension LaunchFiltersPresenter {
+  func displayInitial(filters: LaunchListFilters) {
+    view?.display(sortingRule: filters.order)
+    view?.displayFilter(selectedYear: filters.launchYear)
+    view?.displayFilter(successfulLaunch: filters.launchSuccess)
+  }
+}

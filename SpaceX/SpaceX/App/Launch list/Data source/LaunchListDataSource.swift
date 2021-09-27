@@ -29,7 +29,6 @@ enum LaunchListDataSourceSection: SectionProtocol {
 
 class LaunchListDataSource: DataSourceProtocol {
   var totalCount: Int
-  var queryParams: LaunchListFilters
   private var companyInfo: CompanyInfo?
   private var launchListItems: [LaunchDetailsItem]
   private let dateFormatter = TimeDateFormatter()
@@ -40,7 +39,6 @@ class LaunchListDataSource: DataSourceProtocol {
     self.totalCount = totalCount
     self.companyInfo = companyInfo
     self.launchListItems = launchListItems
-    self.queryParams = LaunchListFilters(offset: 0, limit: 25)
     buildSections()
   }
 }
@@ -70,7 +68,7 @@ private extension LaunchListDataSource {
 
   func createLaunchListSection() -> LaunchListDataSourceSection? {
     guard !launchListItems.isEmpty else { return nil }
-    return .launchList("Launches".uppercased(), launchListItems.map { createLaunchListSection(with: $0) })
+    return .launchList("Launches (\(totalCount))".uppercased(), launchListItems.map { createLaunchListSection(with: $0) })
   }
 }
 
@@ -92,7 +90,14 @@ private extension LaunchListDataSource {
 
 //// MARK: - Pagination
 extension LaunchListDataSource {
-  func setLaunchList(_ newLaunchListBatch: [LaunchDetailsItem]) {
+  func clearList() {
+    launchListItems = []
+    totalCount = 0
+    buildSections()
+  }
+  
+  func setLaunchList(_ newLaunchListBatch: [LaunchDetailsItem], totalCount: Int) {
+    self.totalCount = totalCount
     launchListItems.append(contentsOf: newLaunchListBatch)
     buildSections()
   }
