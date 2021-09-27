@@ -55,6 +55,12 @@ extension LaunchListViewController: LaunchListDisplayLogic {
 }
 
 private extension LaunchListViewController {
+  @objc func filterButtonTapped() {
+    presenter?.onFilterButtonTapped()
+  }
+}
+
+private extension LaunchListViewController {
   func setupView() {
     setupContentView()
     setupTableView()
@@ -75,6 +81,7 @@ private extension LaunchListViewController {
   
   func setupNavigationBar() {
     navigationItem.title = "SpaceX"
+    navigationItem.rightBarButtonItem = .filterButton(target: self, action: #selector(filterButtonTapped))
   }
 }
 
@@ -111,7 +118,6 @@ extension LaunchListViewController: UITableViewDataSource  {
       }
       return cell
     }
-
   }
 }
 

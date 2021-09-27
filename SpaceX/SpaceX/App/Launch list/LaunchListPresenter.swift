@@ -10,6 +10,7 @@ import Foundation
 
 protocol LaunchListViewPresentingLogic: AnyObject {
   func onItemSelected(at indexPath: IndexPath)
+  func onFilterButtonTapped()
   func onPrefetchRequested()
   func refreshControlValueChanged()
   func onViewDidLoad()
@@ -36,6 +37,10 @@ extension LaunchListPresenter: LaunchListViewPresentingLogic {
     router.showLaunchDetails(for: details)
   }
   
+  func onFilterButtonTapped() {
+    print("filter")
+  }
+
   func onPrefetchRequested() {
     if isFetchInProgress { return }
     isFetchInProgress = true

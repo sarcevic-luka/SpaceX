@@ -39,7 +39,7 @@ extension NetworkEventMonitor: EventMonitor {
       let jsonString = String(data: prettyPrintedData, encoding: .utf8) else {
       return
     }
-    debugPrint("🌐 | \(#function)\nResponse: \(jsonString)")
+//    debugPrint("🌐 | \(#function)\nResponse: \(jsonString)")
   }
   
   internal func requestDidFinish(_ request: Alamofire.Request) {

@@ -39,6 +39,7 @@
 		53F7CCE327015EB90005D88E /* AlertEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCE227015EB90005D88E /* AlertEnums.swift */; };
 		53F7CCE5270160A60005D88E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCE4270160A60005D88E /* Router.swift */; };
 		53F7CCE7270163750005D88E /* UIViewController-SpaceX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCE6270163750005D88E /* UIViewController-SpaceX.swift */; };
+		53F7CCE92701B8510005D88E /* UIBarButton-SpaceX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCE82701B8510005D88E /* UIBarButton-SpaceX.swift */; };
 		53FD54D326FD0E2C00F43C9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD54D226FD0E2C00F43C9C /* AppDelegate.swift */; };
 		53FD54DC26FD0E2C00F43C9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53FD54DB26FD0E2C00F43C9C /* Assets.xcassets */; };
 		53FD54DF26FD0E2C00F43C9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53FD54DD26FD0E2C00F43C9C /* LaunchScreen.storyboard */; };
@@ -226,6 +227,7 @@
 		53F7CCE227015EB90005D88E /* AlertEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertEnums.swift; sourceTree = "<group>"; };
 		53F7CCE4270160A60005D88E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		53F7CCE6270163750005D88E /* UIViewController-SpaceX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController-SpaceX.swift"; sourceTree = "<group>"; };
+		53F7CCE82701B8510005D88E /* UIBarButton-SpaceX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButton-SpaceX.swift"; sourceTree = "<group>"; };
 		53FD54CF26FD0E2C00F43C9C /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53FD54D226FD0E2C00F43C9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53FD54DB26FD0E2C00F43C9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -483,6 +485,7 @@
 				53F7CCB526FE926D0005D88E /* UITableView-SpaceX.swift */,
 				53F7CCC127008CDE0005D88E /* UIView-SpaceX.swift */,
 				53F7CCE6270163750005D88E /* UIViewController-SpaceX.swift */,
+				53F7CCE82701B8510005D88E /* UIBarButton-SpaceX.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1152,6 +1155,7 @@
 				53F7CCC0270056E30005D88E /* LaunchListCell.swift in Sources */,
 				53F7CC9A26FE8DCF0005D88E /* StartupProcessService.swift in Sources */,
 				53F7CCD8270155B30005D88E /* AlertAction.swift in Sources */,
+				53F7CCE92701B8510005D88E /* UIBarButton-SpaceX.swift in Sources */,
 				53F7CCE127015B8C0005D88E /* AlertViewController-SpaceX.swift in Sources */,
 				53F7CCA826FE90860005D88E /* Globals.swift in Sources */,
 				53F7CC9826FE8DBA0005D88E /* StartupProcess.swift in Sources */,
