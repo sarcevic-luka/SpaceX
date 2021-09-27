@@ -9,17 +9,15 @@ import UIKit
 import Assets
 import SnapKit
 
-class HeaderView: UICollectionReusableView {
-  struct ViewModel {
-    let title: String
-  }
+class HeaderView: UITableViewHeaderFooterView {
   private lazy var titleLabel = UILabel()
+  private lazy var backgroundColorView = UIView()
   
-  override init(frame: CGRect) {
-    super.init(frame: frame)
+  override init(reuseIdentifier: String?) {
+    super.init(reuseIdentifier: reuseIdentifier)
     setupViews()
   }
-  
+    
   @available(*, unavailable)
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
@@ -27,8 +25,9 @@ class HeaderView: UICollectionReusableView {
 }
 
 extension HeaderView {
-  func update(_ viewModel: ViewModel) {
-    titleLabel.text = viewModel.title
+  var titleText: String? {
+    get { titleLabel.text }
+    set { titleLabel.text = newValue }
   }
 }
 
@@ -40,7 +39,12 @@ private extension HeaderView {
   }
 
   func setupView() {
-    self.backgroundColor = ColorAssets.General.appBlack.color
+    addSubview(backgroundColorView)
+    backgroundColorView.snp.makeConstraints {
+      $0.edges.equalToSuperview()
+
+    }
+    backgroundColorView.backgroundColor = ColorAssets.General.appBlack.color
   }
 
   func setupTitleLabel() {
@@ -50,7 +54,7 @@ private extension HeaderView {
       $0.centerY.equalToSuperview()
     }
     titleLabel.font = .appFont(size: 16, weight: .bold)
-    titleLabel.textColor = ColorAssets.General.appWhite.color
+    titleLabel.textColor = ColorAssets.General.white.color
     titleLabel.textAlignment = .left
   }
 }

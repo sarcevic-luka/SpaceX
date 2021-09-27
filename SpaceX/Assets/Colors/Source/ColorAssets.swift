@@ -12,7 +12,8 @@ public struct ColorAssets { }
 public extension ColorAssets {
   enum General: String, ColorAsset {
     case appBlack = "color_app_black"
-    case appWhite = "color_app_white"
+    case gray = "color_gray"
+    case white = "color_white"
     
     public var color: UIColor {
       UIColor(named: rawValue, in: Bundle(for: ColorDummy.self), compatibleWith: nil) ?? .black

@@ -9,17 +9,17 @@ import UIKit
 import Assets
 import SnapKit
 
-class LaunchListCompanyInfoCell: UICollectionViewCell {
+class LaunchListCompanyInfoCell: UITableViewCell {
   struct ViewModel {
     let info: String
   }
   private lazy var infoLabel = UILabel()
   
-  override init(frame: CGRect) {
-    super.init(frame: frame)
+  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    super.init(style: style, reuseIdentifier: reuseIdentifier)
     setupViews()
   }
-  
+
   @available(*, unavailable)
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
@@ -40,7 +40,7 @@ private extension LaunchListCompanyInfoCell {
   }
   
   func setupView() {
-    contentView.backgroundColor = ColorAssets.General.appWhite.color
+    contentView.backgroundColor = ColorAssets.General.white.color
   }
   
   func setupInfoLabel() {

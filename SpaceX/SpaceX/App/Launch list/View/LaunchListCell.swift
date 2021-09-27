@@ -10,14 +10,13 @@ import Assets
 import Kingfisher
 import SnapKit
 
-class LaunchListCell: UICollectionViewCell {
+class LaunchListCell: UITableViewCell {
   struct ViewModel {
-    let missionIconURL: URL
+    let missionIconURL: URL?
     let missionName: String
     let missionTime: String
     let rocketDetails: String
-    let isInPast: Bool
-    let daysCount: String
+    let daysCount: Int
     let launchWasSuccessful: Bool
   }
   private lazy var indicatorView = UIActivityIndicatorView()
@@ -33,12 +32,13 @@ class LaunchListCell: UICollectionViewCell {
   private lazy var rocketDetailsLabel = UILabel()
   private lazy var daysCountLabel = UILabel()
   private lazy var launchSuccessIndicatorImageView = UIImageView()
+  private lazy var separatorView = UIView()
   
-  override init(frame: CGRect) {
-    super.init(frame: frame)
+  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    super.init(style: style, reuseIdentifier: reuseIdentifier)
     setupViews()
   }
-  
+
   @available(*, unavailable)
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
@@ -46,21 +46,27 @@ class LaunchListCell: UICollectionViewCell {
 }
 
 extension LaunchListCell {
-  func update(_ viewModel: ViewModel) {
+  func update(_ viewModel: ViewModel?) {
+    guard let model = viewModel else {
+      indicatorView.startAnimating()
+      missionImageView.image = nil
+      [verticalTitlesStackView, verticalValuesStackView].forEach { $0.fadeOut() }
+      return
+    }
     missionImageView.kf.setImage(
-      with: viewModel.missionIconURL,
+      with: model.missionIconURL,
       placeholder: ImageAssets.Icons.shuttle.image,
       options: [
         .transition(.fade(1)),
         .cacheOriginalImage
       ])
-    missionNameTitleLabel.text = viewModel.missionName
-    daysCountTitleLabel.text = viewModel.isInPast ? "Days since now" : "Days from now"
-    missionNameLabel.text = viewModel.missionName
-    timeLabel.text = viewModel.missionTime
-    rocketDetailsLabel.text = viewModel.rocketDetails
-    daysCountLabel.text = viewModel.daysCount
-    launchSuccessIndicatorImageView.image = viewModel.launchWasSuccessful ? ImageAssets.Icons.success.image : ImageAssets.Icons.failure.image
+    missionNameLabel.text = model.missionName
+    daysCountTitleLabel.text = model.daysCount < 0 ? "Days since now:" : "Days from now:"
+    missionNameLabel.text = model.missionName
+    timeLabel.text = model.missionTime
+    rocketDetailsLabel.text = model.rocketDetails
+    daysCountLabel.text = "\(model.daysCount)"
+    launchSuccessIndicatorImageView.image = model.launchWasSuccessful ? ImageAssets.Icons.success.image : ImageAssets.Icons.failure.image
     [verticalTitlesStackView, verticalValuesStackView].forEach { $0.fadeIn() }
     indicatorView.stopAnimating()
   }
@@ -77,10 +83,12 @@ private extension LaunchListCell {
     setupVerticalValuesStackView()
     setupValuesLabels()
     setupLaunchSuccessIndicatorImageView()
+    setupSeparatorView()
   }
   
   func setupView() {
-    contentView.backgroundColor = ColorAssets.General.appWhite.color
+    contentView.backgroundColor = ColorAssets.General.white.color
+    backgroundColor = ColorAssets.General.white.color
   }
   
   func setupIndicatorView() {
@@ -89,15 +97,15 @@ private extension LaunchListCell {
       $0.center.equalToSuperview()
     }
     indicatorView.hidesWhenStopped = true
-    indicatorView.color = ColorAssets.General.appBlack.color.withAlphaComponent(0.7)
-    indicatorView.startAnimating()
+    indicatorView.color = ColorAssets.General.gray.color
   }
   
   func setupMissionImageView() {
     addSubview(missionImageView)
     missionImageView.snp.makeConstraints {
       $0.size.equalTo(40)
-      $0.top.leading.equalToSuperview().inset(20)
+      $0.leading.equalToSuperview().inset(8)
+      $0.top.equalToSuperview().inset(16)
     }
   }
   
@@ -106,7 +114,7 @@ private extension LaunchListCell {
     verticalTitlesStackView.snp.makeConstraints {
       $0.leading.equalTo(missionImageView.snp.trailing).offset(12)
       $0.top.bottom.equalToSuperview().inset(12)
-      $0.width.equalTo(80)
+      $0.width.equalTo(95)
     }
     verticalTitlesStackView.axis = .vertical
     verticalTitlesStackView.distribution = .fillEqually
@@ -116,14 +124,14 @@ private extension LaunchListCell {
   
   func setupTitlesLabels() {
     let stackViewTitles = [missionNameTitleLabel, timeTitleLabel, rocketDetailsTitleLabel, daysCountTitleLabel]
-    missionNameTitleLabel.text = "Base expirience:"
+    missionNameTitleLabel.text = "Mission:"
     timeTitleLabel.text = "Types:"
     rocketDetailsTitleLabel.text = "Weight:"
     daysCountTitleLabel.text = ""
     
     stackViewTitles.forEach { label in
       label.font = .appFont(size: 14, weight: .regular)
-      label.textColor = ColorAssets.General.appBlack.color
+      label.textColor = ColorAssets.General.gray.color
       verticalTitlesStackView.addArrangedSubview(label)
     }
   }
@@ -133,7 +141,6 @@ private extension LaunchListCell {
     verticalValuesStackView.snp.makeConstraints {
       $0.leading.equalTo(verticalTitlesStackView.snp.trailing).offset(12)
       $0.top.bottom.equalToSuperview().inset(12)
-      $0.width.equalTo(80)
     }
     verticalValuesStackView.axis = .vertical
     verticalValuesStackView.distribution = .fillEqually
@@ -145,8 +152,8 @@ private extension LaunchListCell {
     let stackViewTitles = [missionNameLabel, timeLabel, rocketDetailsLabel, daysCountLabel]
     
     stackViewTitles.forEach { label in
-      label.font = .systemFont(ofSize: 16, weight: .medium)
-      label.textColor = ColorAssets.General.appBlack.color.withAlphaComponent(0.7)
+      label.font = .appFont(size: 14, weight: .regular)
+      label.textColor = ColorAssets.General.appBlack.color
       label.text = " "
       verticalValuesStackView.addArrangedSubview(label)
     }
@@ -155,10 +162,18 @@ private extension LaunchListCell {
   func setupLaunchSuccessIndicatorImageView() {
     addSubview(launchSuccessIndicatorImageView)
     launchSuccessIndicatorImageView.snp.makeConstraints {
-      $0.size.equalTo(40)
-      $0.centerY.equalToSuperview()
-      $0.leading.equalTo(verticalValuesStackView.snp.trailing).inset(12)
-      $0.trailing.equalToSuperview().inset(12)
+      $0.size.equalTo(30)
+      $0.leading.equalTo(verticalValuesStackView.snp.trailing).inset(-12)
+      $0.top.trailing.equalToSuperview().inset(12)
     }
+  }
+  
+  func setupSeparatorView() {
+    addSubview(separatorView)
+    separatorView.snp.makeConstraints {
+      $0.leading.bottom.trailing.equalToSuperview()
+      $0.height.equalTo(2)
+    }
+    separatorView.backgroundColor = ColorAssets.General.gray.color
   }
 }
