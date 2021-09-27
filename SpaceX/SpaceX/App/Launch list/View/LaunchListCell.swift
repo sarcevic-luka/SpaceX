@@ -50,7 +50,7 @@ extension LaunchListCell {
     guard let model = viewModel else {
       indicatorView.startAnimating()
       missionImageView.image = nil
-      [verticalTitlesStackView, verticalValuesStackView].forEach { $0.fadeOut() }
+      [verticalTitlesStackView, verticalValuesStackView].forEach { $0.fadeOut(0.0) }
       return
     }
     missionImageView.kf.setImage(
@@ -67,7 +67,7 @@ extension LaunchListCell {
     rocketDetailsLabel.text = model.rocketDetails
     daysCountLabel.text = "\(model.daysCount)"
     launchSuccessIndicatorImageView.image = model.launchWasSuccessful ? ImageAssets.Icons.success.image : ImageAssets.Icons.failure.image
-    [verticalTitlesStackView, verticalValuesStackView].forEach { $0.fadeIn() }
+    [verticalTitlesStackView, verticalValuesStackView].forEach { $0.fadeIn(0.2) }
     indicatorView.stopAnimating()
   }
 }
