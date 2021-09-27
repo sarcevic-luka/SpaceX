@@ -41,11 +41,13 @@ extension LaunchListViewController: LaunchListDisplayLogic {
       if self.dataSource == nil || companyInfo != nil {
         self.dataSource = LaunchListDataSource(totalCount: totalCount, companyInfo: companyInfo, launchListItems: launchListItems)
         self.contentView.tableView.reloadData()
+        self.contentView.tableView.refreshControl?.endRefreshing()
       } else {
         self.dataSource?.setLaunchList(launchListItems)
         guard let indexPathsForReload = self.dataSource?.calculateIndexPathsToReload(from: launchListItems) else {
           return
         }
+        self.contentView.tableView.refreshControl?.endRefreshing()
         self.contentView.tableView.reloadRows(at: indexPathsForReload, with: .automatic)
       }
     }
@@ -60,7 +62,7 @@ private extension LaunchListViewController {
   
   func setupContentView() {
     contentView.refreshControlRefreshHandler = { [weak self] in
-      self?.presenter?.onRefreshControlRefresh()
+      self?.presenter?.refreshControlValueChanged()
     }
   }
    

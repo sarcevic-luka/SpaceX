@@ -11,7 +11,7 @@ import Foundation
 protocol LaunchListViewPresentingLogic: AnyObject {
   func onItemSelected(at indexPath: IndexPath)
   func onPrefetchRequested()
-  func onRefreshControlRefresh()
+  func refreshControlValueChanged()
   func onViewDidLoad()
 }
 
@@ -32,7 +32,7 @@ class LaunchListPresenter {
 // MARK: - LaunchListViewPresentingLogic
 extension LaunchListPresenter: LaunchListViewPresentingLogic {
   func onItemSelected(at indexPath: IndexPath) {
-#warning("Add logic here")
+    #warning("Add here pickerView")
   }
   
   func onPrefetchRequested() {
@@ -48,17 +48,16 @@ extension LaunchListPresenter: LaunchListViewPresentingLogic {
         }
       }
       .catch { [weak self] error in
-#warning("Add message display")
+          #warning("Add message display")
         print(error.localizedDescription)
         //        self?.view?.displayMessagePopup(with: .customError(error.localizedDescription))
       }
       .always { [weak self] in
         self?.isFetchInProgress = false
       }
-
   }
   
-  func onRefreshControlRefresh() {
+  func refreshControlValueChanged() {
     fetchAndPresentLaunchList()
   }
   
