@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Model
 
 protocol LaunchListViewPresentingLogic: AnyObject {
   func onItemSelected(at indexPath: IndexPath)
@@ -38,13 +39,15 @@ extension LaunchListPresenter: LaunchListViewPresentingLogic {
   }
   
   func onFilterButtonTapped() {
-    print("filter")
+    guard let activeFilters = dataSource?.queryParams else { return }
+    router.showFilterSelection(with: activeFilters)
   }
 
   func onPrefetchRequested() {
     if isFetchInProgress { return }
     isFetchInProgress = true
-    interactor?.getLaunchList(offset: dataSource?.currentOffset() ?? 0)
+    guard let params = dataSource?.queryParams else { return }
+    interactor?.getLaunchList(queryParams: params)
       .then { [weak self] (launchList, totalCount) in
         onMainThread {
           guard let strongSelf = self else { return }

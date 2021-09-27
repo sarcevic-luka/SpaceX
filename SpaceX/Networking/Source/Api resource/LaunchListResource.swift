@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import Model
 import Alamofire
 
 public enum LaunchListResource: Resource {
-  case getLaunchList(offset: Int, limit: Int)
+  case getLaunchList(params: LaunchListFilters)
   case getCompanyInfo
   
   var endpoint: String {
@@ -30,10 +31,13 @@ public enum LaunchListResource: Resource {
   
   var queryItems: [URLQueryItem] {
     switch self {
-    case .getLaunchList(let offset, let limit):
+    case .getLaunchList(let params):
       var queryItems = [URLQueryItem]()
-      queryItems.append(URLQueryItem(name: "offset", value: offset.description))
-      queryItems.append(URLQueryItem(name: "limit", value: limit.description))
+      queryItems.append(URLQueryItem(name: "offset", value: params.offset.description))
+      queryItems.append(URLQueryItem(name: "limit", value: params.limit.description))
+      queryItems.append(URLQueryItem(name: "launch_year", value: params.launchYear?.description))
+      queryItems.append(URLQueryItem(name: "launch_success", value: params.launchSuccess?.description))
+      queryItems.append(URLQueryItem(name: "order", value: params.order?.description))
       return queryItems
     case .getCompanyInfo:
       return []

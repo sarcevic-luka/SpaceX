@@ -40,6 +40,12 @@
 		53F7CCE5270160A60005D88E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCE4270160A60005D88E /* Router.swift */; };
 		53F7CCE7270163750005D88E /* UIViewController-SpaceX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCE6270163750005D88E /* UIViewController-SpaceX.swift */; };
 		53F7CCE92701B8510005D88E /* UIBarButton-SpaceX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCE82701B8510005D88E /* UIBarButton-SpaceX.swift */; };
+		53F7CCF32701C04C0005D88E /* LaunchFiltersContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCEE2701C04C0005D88E /* LaunchFiltersContentView.swift */; };
+		53F7CCF42701C04C0005D88E /* LaunchFiltersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCEF2701C04C0005D88E /* LaunchFiltersPresenter.swift */; };
+		53F7CCF52701C04C0005D88E /* LaunchFiltersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCF02701C04C0005D88E /* LaunchFiltersRouter.swift */; };
+		53F7CCF62701C04C0005D88E /* LaunchFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCF12701C04C0005D88E /* LaunchFiltersViewController.swift */; };
+		53F7CCF72701C04C0005D88E /* LaunchFiltersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCF22701C04C0005D88E /* LaunchFiltersInteractor.swift */; };
+		53F7CCFB2701C3E20005D88E /* LaunchListFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F7CCFA2701C3E20005D88E /* LaunchListFilters.swift */; };
 		53FD54D326FD0E2C00F43C9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FD54D226FD0E2C00F43C9C /* AppDelegate.swift */; };
 		53FD54DC26FD0E2C00F43C9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53FD54DB26FD0E2C00F43C9C /* Assets.xcassets */; };
 		53FD54DF26FD0E2C00F43C9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53FD54DD26FD0E2C00F43C9C /* LaunchScreen.storyboard */; };
@@ -228,6 +234,12 @@
 		53F7CCE4270160A60005D88E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		53F7CCE6270163750005D88E /* UIViewController-SpaceX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController-SpaceX.swift"; sourceTree = "<group>"; };
 		53F7CCE82701B8510005D88E /* UIBarButton-SpaceX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButton-SpaceX.swift"; sourceTree = "<group>"; };
+		53F7CCEE2701C04C0005D88E /* LaunchFiltersContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFiltersContentView.swift; sourceTree = "<group>"; };
+		53F7CCEF2701C04C0005D88E /* LaunchFiltersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFiltersPresenter.swift; sourceTree = "<group>"; };
+		53F7CCF02701C04C0005D88E /* LaunchFiltersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFiltersRouter.swift; sourceTree = "<group>"; };
+		53F7CCF12701C04C0005D88E /* LaunchFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFiltersViewController.swift; sourceTree = "<group>"; };
+		53F7CCF22701C04C0005D88E /* LaunchFiltersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFiltersInteractor.swift; sourceTree = "<group>"; };
+		53F7CCFA2701C3E20005D88E /* LaunchListFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListFilters.swift; sourceTree = "<group>"; };
 		53FD54CF26FD0E2C00F43C9C /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53FD54D226FD0E2C00F43C9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53FD54DB26FD0E2C00F43C9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -329,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				53FD54D226FD0E2C00F43C9C /* AppDelegate.swift */,
+				53F7CCEB2701C0230005D88E /* Launch filters */,
 				53F7CC8426FE8B980005D88E /* Launch list */,
 			);
 			path = App;
@@ -575,6 +588,26 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		53F7CCEB2701C0230005D88E /* Launch filters */ = {
+			isa = PBXGroup;
+			children = (
+				53F7CCF82701C05D0005D88E /* View */,
+				53F7CCEF2701C04C0005D88E /* LaunchFiltersPresenter.swift */,
+				53F7CCF02701C04C0005D88E /* LaunchFiltersRouter.swift */,
+				53F7CCF12701C04C0005D88E /* LaunchFiltersViewController.swift */,
+				53F7CCF22701C04C0005D88E /* LaunchFiltersInteractor.swift */,
+			);
+			path = "Launch filters";
+			sourceTree = "<group>";
+		};
+		53F7CCF82701C05D0005D88E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				53F7CCEE2701C04C0005D88E /* LaunchFiltersContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		53FD54C626FD0E2C00F43C9C = {
 			isa = PBXGroup;
 			children = (
@@ -747,6 +780,7 @@
 				53FD554726FE02F500F43C9C /* LinkDetails.swift */,
 				53FD554526FE012900F43C9C /* RocketDetails.swift */,
 				53F7CCD02700FF560005D88E /* LaunchListHeaderModel.swift */,
+				53F7CCFA2701C3E20005D88E /* LaunchListFilters.swift */,
 			);
 			path = "Launch list";
 			sourceTree = "<group>";
@@ -1137,6 +1171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53F7CCF42701C04C0005D88E /* LaunchFiltersPresenter.swift in Sources */,
 				53F7CCC227008CDE0005D88E /* UIView-SpaceX.swift in Sources */,
 				53F7CCE327015EB90005D88E /* AlertEnums.swift in Sources */,
 				53F7CCA526FE90270005D88E /* DataSourceProtocol.swift in Sources */,
@@ -1145,6 +1180,8 @@
 				53F7CCE5270160A60005D88E /* Router.swift in Sources */,
 				53F7CCE7270163750005D88E /* UIViewController-SpaceX.swift in Sources */,
 				53F7CCA026FE8FE90005D88E /* NavigationBarSetupable.swift in Sources */,
+				53F7CCF72701C04C0005D88E /* LaunchFiltersInteractor.swift in Sources */,
+				53F7CCF52701C04C0005D88E /* LaunchFiltersRouter.swift in Sources */,
 				53F7CCCF2700C7590005D88E /* TimeDateFormatter.swift in Sources */,
 				53F7CC9C26FE8DDE0005D88E /* AppearanceCustomisationStartupProcess.swift in Sources */,
 				53F7CCAA26FE90960005D88E /* ReusableView.swift in Sources */,
@@ -1168,7 +1205,9 @@
 				53F7CC8C26FE8BAE0005D88E /* LaunchListRouter.swift in Sources */,
 				53F7CCB626FE926D0005D88E /* UITableView-SpaceX.swift in Sources */,
 				53F7CCDA270157950005D88E /* AlertContentView.swift in Sources */,
+				53F7CCF32701C04C0005D88E /* LaunchFiltersContentView.swift in Sources */,
 				53F7CCD5270155880005D88E /* AlertViewController.swift in Sources */,
+				53F7CCF62701C04C0005D88E /* LaunchFiltersViewController.swift in Sources */,
 				53F7CC8E26FE8BAE0005D88E /* LaunchListInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1198,6 +1237,7 @@
 				53FD553926FDFAAC00F43C9C /* Model.docc in Sources */,
 				53F7CCD12700FF560005D88E /* LaunchListHeaderModel.swift in Sources */,
 				53FD554626FE012900F43C9C /* RocketDetails.swift in Sources */,
+				53F7CCFB2701C3E20005D88E /* LaunchListFilters.swift in Sources */,
 				53FD554426FE001900F43C9C /* LaunchDetailsItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

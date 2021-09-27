@@ -12,6 +12,7 @@ import Model
 import Promises
 
 protocol LaunchListRoutingLogic: AnyObject {
+  func showFilterSelection(with filters: LaunchListFilters)
   func showLaunchDetails(for launch: LaunchDetailsItem)
 }
 
@@ -37,6 +38,11 @@ class LaunchListRouter: Router {
 
 // MARK: - LaunchListRoutingLogic
 extension LaunchListRouter: LaunchListRoutingLogic {
+  func showFilterSelection(with filters: LaunchListFilters) {
+    let filtersScene = LaunchFiltersRouter.createModule(activeFilters: filters, delegate: self)
+    viewController?.present(filtersScene, animated: true)
+  }
+  
   func showLaunchDetails(for launch: LaunchDetailsItem) {
     showAlert(.launchDetails(
       title: launch.missionName,
@@ -76,4 +82,8 @@ private extension LaunchListRouter {
       viewController?.present(vc, animated: true)
     }
   }
+}
+
+extension LaunchListRouter: LaunchFiltersRouterDelegate {
+  
 }

@@ -13,7 +13,7 @@ import Promises
 
 protocol LaunchListBusinessLogic: AnyObject {
   func getAllData() -> Promise<([LaunchDetailsItem], CompanyInfo, Int)>
-  func getLaunchList(offset: Int) -> Promise<(launchItems: [LaunchDetailsItem], totalCount: Int)>
+  func getLaunchList(queryParams: LaunchListFilters) -> Promise<(launchItems: [LaunchDetailsItem], totalCount: Int)>
 }
 
 class LaunchListInteractor {
@@ -28,21 +28,21 @@ class LaunchListInteractor {
 // MARK: - LaunchListBusinessLogic
 extension LaunchListInteractor: LaunchListBusinessLogic {
   func getAllData() -> Promise<([LaunchDetailsItem], CompanyInfo, Int)> {
-    all(getLaunchListDataOnly(offset: 0), launchListNetworkService.getCompanyInfo())
+    all(getLaunchListDataOnly(queryParams: LaunchListFilters(offset: 0, limit: 25)), launchListNetworkService.getCompanyInfo())
       .then { (launchDetails, companyInfo) -> Promise<([LaunchDetailsItem], CompanyInfo, Int)> in
         return Promise((launchDetails.launchItems, companyInfo, launchDetails.totalCount))
       }
   }
   
-  func getLaunchList(offset: Int) -> Promise<(launchItems: [LaunchDetailsItem], totalCount: Int)> {
-    getLaunchListDataOnly(offset: offset)
+  func getLaunchList(queryParams: LaunchListFilters) -> Promise<(launchItems: [LaunchDetailsItem], totalCount: Int)> {
+    getLaunchListDataOnly(queryParams: queryParams)
   }
 }
 
 private extension LaunchListInteractor {
-  func getLaunchListDataOnly(offset: Int) -> Promise<(launchItems: [LaunchDetailsItem], totalCount: Int)> {
+  func getLaunchListDataOnly(queryParams: LaunchListFilters) -> Promise<(launchItems: [LaunchDetailsItem], totalCount: Int)> {
     Promise { fullfill, reject in
-      self.launchListNetworkService.getLaunchList(offset: offset, limit: self.paginationLimit)
+      self.launchListNetworkService.getLaunchList(queryParams: queryParams)
         .then { (listItems, totalCount) in
           return fullfill((listItems, totalCount))
         }
@@ -53,3 +53,4 @@ private extension LaunchListInteractor {
     }
   }
 }
+
