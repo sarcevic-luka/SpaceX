@@ -35,7 +35,7 @@ class LaunchListDataSource: DataSourceProtocol {
 
   private(set) lazy var sections = [LaunchListDataSourceSection]()
   
-  init(totalCount: Int, companyInfo: CompanyInfo?, launchListItems: [LaunchDetailsItem]) {
+  init(totalCount: Int = 0, companyInfo: CompanyInfo? = nil, launchListItems: [LaunchDetailsItem] = []) {
     self.totalCount = totalCount
     self.companyInfo = companyInfo
     self.launchListItems = launchListItems
@@ -55,7 +55,7 @@ extension LaunchListDataSource {
   }
   
   func launchDetails(at index: Int) -> LaunchDetailsItem? {
-   return launchListItems[index]
+    launchListItems[safe: index]
   }
 }
 
@@ -103,7 +103,7 @@ extension LaunchListDataSource {
   }
 
   func calculateIndexPathsToReload(from newLaunchListBatch: [LaunchDetailsItem]) -> [IndexPath] {
-    let startIndex = currentOffset() 
+    let startIndex = currentOffset() - newLaunchListBatch.count
     let endIndex = startIndex + newLaunchListBatch.count
     return (startIndex..<endIndex).map { IndexPath(row: $0, section: 1) }
   }

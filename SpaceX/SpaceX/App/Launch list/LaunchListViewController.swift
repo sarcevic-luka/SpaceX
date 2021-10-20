@@ -8,9 +8,10 @@
 
 import UIKit
 import Model
+import Assets
 
 protocol LaunchListDisplayLogic: AnyObject {
-  func displayLaunchList(totalCount: Int, companyInfo: CompanyInfo, launchListItems: [LaunchDetailsItem])
+  func displayLaunchList(dataSource: LaunchListDataSource)
   func displayMessagePopup(with context: MessagePopupView.State)
   func displayPaginatedLaunchListItems(launchListItems: [LaunchDetailsItem], totalCount: Int)
 }
@@ -39,28 +40,23 @@ class LaunchListViewController: UIViewController, MessagePopupViewPresentable {
 
 // MARK: - LaunchListDisplayLogic
 extension LaunchListViewController: LaunchListDisplayLogic {
-  func displayLaunchList(totalCount: Int, companyInfo: CompanyInfo, launchListItems: [LaunchDetailsItem]) {
-    onMainThread {
-      self.dataSource?.clearList()
-      self.dataSource = LaunchListDataSource(totalCount: totalCount, companyInfo: companyInfo, launchListItems: launchListItems)
-      self.contentView.tableView.reloadData()
-      self.contentView.tableView.refreshControl?.endRefreshing()
-    }
+  func displayLaunchList(dataSource: LaunchListDataSource) {
+    self.dataSource = dataSource
+    contentView.tableView.reloadData()
+    contentView.tableView.refreshControl?.endRefreshing()
   }
   
   func displayMessagePopup(with context: MessagePopupView.State) {
     presentMessagePopup(MessagePopupView(context: context), completion: nil)
   }
-
+  
   func displayPaginatedLaunchListItems(launchListItems: [LaunchDetailsItem], totalCount: Int) {
-    onMainThread {
-      self.dataSource?.setLaunchList(launchListItems, totalCount: totalCount)
-      guard let indexPathsForReload = self.dataSource?.calculateIndexPathsToReload(from: launchListItems) else {
-        return
-      }
-      self.contentView.tableView.refreshControl?.endRefreshing()
-      self.contentView.tableView.reloadRows(at: indexPathsForReload, with: .automatic)
+    guard let indexPathsForReload = self.dataSource?.calculateIndexPathsToReload(from: launchListItems) else {
+      debugPrint("There are no indexPathsForReload")
+      return
     }
+    contentView.tableView.refreshControl?.endRefreshing()
+    contentView.tableView.reloadRows(at: indexPathsForReload, with: .automatic)
   }
   
   func reloadData(with filters: LaunchListFilters) {
@@ -91,8 +87,6 @@ private extension LaunchListViewController {
     contentView.tableView.delegate = self
     contentView.tableView.prefetchDataSource = self
     contentView.tableView.isPrefetchingEnabled = true
-    contentView.tableView.rowHeight = UITableView.automaticDimension
-    contentView.tableView.estimatedRowHeight = 92
   }
   
   func setupNavigationBar() {
@@ -114,11 +108,11 @@ extension LaunchListViewController: UITableViewDataSource  {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
     guard let item = dataSource?.item(at: indexPath) else {
-      return UITableViewCell()
+      let cell = tableView.dequeueReusableCell(LoadingCell.self, at: indexPath)
+      cell.startIndicatorViewAnimation()
+      return cell
     }
-    
     switch item {
     case .info(let infoModel):
       let cell = tableView.dequeueReusableCell(LaunchListCompanyInfoCell.self, at: indexPath)
@@ -126,17 +120,9 @@ extension LaunchListViewController: UITableViewDataSource  {
       return cell
     case .launchList(let listModel):
       let cell = tableView.dequeueReusableCell(LaunchListCell.self, at: indexPath)
-      if isLoadingCell(for: indexPath) {
-        cell.update(nil)
-      } else {
-        cell.update(listModel)
-      }
+      cell.update(listModel)
       return cell
     }
-  }
-  
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    UITableView.automaticDimension
   }
 }
 
@@ -168,11 +154,5 @@ extension LaunchListViewController: UITableViewDataSourcePrefetching {
 private extension LaunchListViewController {
   func isLoadingCell(for indexPath: IndexPath) -> Bool {
     indexPath.row >= dataSource?.currentOffset() ?? 0
-  }
-  
-  func visibleIndexPathsToReload(intersecting indexPaths: [IndexPath]) -> [IndexPath] {
-    let indexPathsForVisibleRows = contentView.tableView.indexPathsForVisibleRows ?? []
-    let indexPathsIntersection = Set(indexPathsForVisibleRows).intersection(indexPaths)
-    return Array(indexPathsIntersection)
   }
 }

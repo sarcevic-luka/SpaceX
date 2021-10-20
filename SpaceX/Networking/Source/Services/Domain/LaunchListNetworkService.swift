@@ -11,7 +11,7 @@ import Promises
 import Alamofire
 
 public protocol LaunchListNetworkServiceProtocol {
-  func getLaunchList(queryParams: LaunchListFilters) -> Promise<(listItems: [LaunchDetailsItem], totalCount: Int)>
+  func getLaunchList(queryParams: LaunchListFilters) -> Promise<(launchItems: [LaunchDetailsItem], totalCount: Int)>
   func getCompanyInfo() -> Promise<CompanyInfo>
 }
 
@@ -20,7 +20,7 @@ public final class LaunchListNetworkService {
 }
 
 extension LaunchListNetworkService: LaunchListNetworkServiceProtocol {
-  public func getLaunchList(queryParams: LaunchListFilters) -> Promise<(listItems: [LaunchDetailsItem], totalCount: Int)> {
+  public func getLaunchList(queryParams: LaunchListFilters) -> Promise<(launchItems: [LaunchDetailsItem], totalCount: Int)> {
     Promise { fullfill, reject in
       Networking.session
         .request(resource: LaunchListResource.getLaunchList(params: queryParams))
@@ -32,7 +32,7 @@ extension LaunchListNetworkService: LaunchListNetworkServiceProtocol {
               let jsonData = try JSONSerialization.data(withJSONObject: response.response?.allHeaderFields as Any, options: .prettyPrinted)
               let headerModel = try JSONDecoder().decode(LaunchListHeaderModel.self, from: jsonData)
               let totalCount: Int = Int(headerModel.totalCount) ?? 0
-              fullfill((listItems: data, totalCount: totalCount))
+              fullfill((launchItems: data, totalCount: totalCount))
             } catch {
               reject(error)
             }

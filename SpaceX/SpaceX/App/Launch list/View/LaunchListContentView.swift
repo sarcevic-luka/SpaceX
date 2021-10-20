@@ -48,10 +48,17 @@ private extension LaunchListContentView {
     }
     tableView.backgroundColor = ColorAssets.General.white.color
     tableView.alwaysBounceVertical = true
-    tableView.separatorStyle = .none
     tableView.register(LaunchListCompanyInfoCell.self)
     tableView.register(LaunchListCell.self)
     tableView.register(HeaderView.self)
+    tableView.register(LoadingCell.self)
+    tableView.rowHeight = UITableView.automaticDimension
+    tableView.estimatedRowHeight = CellHeights.launchListCell
+    tableView.separatorColor = ColorAssets.General.appBlack.color
+    tableView.separatorStyle = .singleLine
+    tableView.separatorInset = .zero
+    tableView.layoutMargins = .zero
+    tableView.setLoadingAnimation(true)
     tableView.refreshControl = UIRefreshControl()
     tableView.refreshControl?.addTarget(self, action: #selector(refreshControlValueChanged), for: .valueChanged)
   }

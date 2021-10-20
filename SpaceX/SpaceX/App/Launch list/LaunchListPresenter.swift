@@ -57,18 +57,15 @@ extension LaunchListPresenter: LaunchListViewPresentingLogic {
     isFetchInProgress = true
     interactor?.getLaunchList(queryParams: queryParams)
       .then { [weak self] (launchList, totalCount) in
-        onMainThread {
-          guard let strongSelf = self else { return }
-          strongSelf.dataSource?.setLaunchList(launchList, totalCount: totalCount)
-          strongSelf.view?.displayPaginatedLaunchListItems(launchListItems: launchList, totalCount: totalCount)
-          return
-        }
+        guard let strongSelf = self else { return }
+        strongSelf.isFetchInProgress = false
+        strongSelf.dataSource?.setLaunchList(launchList, totalCount: totalCount)
+        strongSelf.view?.displayPaginatedLaunchListItems(launchListItems: launchList, totalCount: totalCount)
+        return
       }
       .catch { [weak self] error in
-        self?.view?.displayMessagePopup(with: .customError(error.localizedDescription))
-      }
-      .always { [weak self] in
         self?.isFetchInProgress = false
+        self?.view?.displayMessagePopup(with: .customError(error.localizedDescription))
       }
   }
   
@@ -89,17 +86,16 @@ private extension LaunchListPresenter {
     interactor?.getAllData(queryParams: queryParams)
       .then { [weak self] (launchList, companyInfo, totalCount) in
         guard let strongSelf = self else { return }
+        strongSelf.isFetchInProgress = false
         strongSelf.dataSource = nil
         strongSelf.dataSource?.clearList()
         strongSelf.dataSource = LaunchListDataSource(totalCount: totalCount, companyInfo: companyInfo, launchListItems: launchList)
-        strongSelf.view?.displayLaunchList(totalCount: totalCount, companyInfo: companyInfo, launchListItems: launchList)
+        strongSelf.view?.displayLaunchList(dataSource: strongSelf.dataSource ?? LaunchListDataSource())
         return
       }
       .catch { [weak self] error in
-        self?.view?.displayMessagePopup(with: .customError(error.localizedDescription))
-      }
-      .always { [weak self] in
         self?.isFetchInProgress = false
+        self?.view?.displayMessagePopup(with: .customError(error.localizedDescription))
       }
   }
 }
