@@ -42,6 +42,7 @@ class LaunchListViewController: UIViewController, MessagePopupViewPresentable {
 extension LaunchListViewController: LaunchListDisplayLogic {
   func displayLaunchList(dataSource: LaunchListDataSource) {
     self.dataSource = dataSource
+    contentView.tableView.restore()
     contentView.tableView.reloadData()
     contentView.tableView.refreshControl?.endRefreshing()
   }
@@ -60,6 +61,7 @@ extension LaunchListViewController: LaunchListDisplayLogic {
   }
   
   func reloadData(with filters: LaunchListFilters) {
+    contentView.tableView.setLoadingAnimation()
     presenter?.onFetchFreshLaunchList(filters: filters)
   }
 }

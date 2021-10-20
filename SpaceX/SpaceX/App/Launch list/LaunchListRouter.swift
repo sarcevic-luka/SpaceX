@@ -39,7 +39,9 @@ class LaunchListRouter: Router {
 // MARK: - LaunchListRoutingLogic
 extension LaunchListRouter: LaunchListRoutingLogic {
   func showFilterSelection(with filters: LaunchListFilters) {
-    let filtersScene = LaunchFiltersRouter.createModule(activeFilters: filters, delegate: self)
+    let activeFilter = filters
+    activeFilter.offset = 0
+    let filtersScene = LaunchFiltersRouter.createModule(activeFilters: activeFilter, delegate: self)
     viewController?.present(filtersScene, animated: true)
   }
   

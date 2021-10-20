@@ -35,11 +35,11 @@ public extension UITableView {
 }
 
 public extension UITableView {
-  func setLoadingAnimation(_ isAnimating: Bool) {
+  func setLoadingAnimation() {
     let activitiyIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
     activitiyIndicator.style = .large
     activitiyIndicator.color = ColorAssets.General.appBlack.color
-    isAnimating ? activitiyIndicator.startAnimating() : activitiyIndicator.stopAnimating()
+    activitiyIndicator.startAnimating()
     backgroundView = activitiyIndicator
   }
   

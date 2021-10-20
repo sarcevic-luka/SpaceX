@@ -58,7 +58,7 @@ private extension LaunchListContentView {
     tableView.separatorStyle = .singleLine
     tableView.separatorInset = .zero
     tableView.layoutMargins = .zero
-    tableView.setLoadingAnimation(true)
+    tableView.setLoadingAnimation()
     tableView.refreshControl = UIRefreshControl()
     tableView.refreshControl?.addTarget(self, action: #selector(refreshControlValueChanged), for: .valueChanged)
   }
