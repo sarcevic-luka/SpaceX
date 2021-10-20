@@ -10,8 +10,8 @@ import Assets
 import SnapKit
 
 class HeaderView: UITableViewHeaderFooterView {
-  private lazy var titleLabel = UILabel()
-  private lazy var backgroundColorView = UIView()
+  private let titleLabel = UILabel()
+  private let backgroundColorView = UIView()
   
   override init(reuseIdentifier: String?) {
     super.init(reuseIdentifier: reuseIdentifier)

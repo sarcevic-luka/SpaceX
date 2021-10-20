@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Assets
 
 public extension UITableView {
   func register<T: UITableViewCell>(_: T.Type) {
@@ -23,13 +24,6 @@ public extension UITableView {
     }
     return view
   }
-
-  func dequeueReusableCell<T: UITableViewCell>(forIndexPath indexPath: IndexPath) -> T {
-    guard let cell = dequeueReusableCell(withIdentifier: T.identifier, for: indexPath) as? T else {
-      fatalError("Could not dequeue cell with identifier: \(T.identifier)")
-    }
-    return cell
-  }
   
   func dequeueReusableCell<T: UITableViewCell>(_ cell: T.Type, at indexPath: IndexPath) -> T {
     guard let cell = dequeueReusableCell(withIdentifier: T.identifier, for: indexPath) as? T else {
@@ -39,6 +33,21 @@ public extension UITableView {
     return cell
   }
 }
+
+public extension UITableView {
+  func setLoadingAnimation(_ isAnimating: Bool) {
+    let activitiyIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
+    activitiyIndicator.style = .large
+    activitiyIndicator.color = ColorAssets.General.appBlack.color
+    isAnimating ? activitiyIndicator.startAnimating() : activitiyIndicator.stopAnimating()
+    backgroundView = activitiyIndicator
+  }
+  
+  func restore() {
+    self.backgroundView = nil
+  }
+}
+
 public extension UITableViewCell {
   /// Returns cell's reuse identifier
   static var identifier: String {

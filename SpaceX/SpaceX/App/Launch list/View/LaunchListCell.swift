@@ -19,20 +19,19 @@ class LaunchListCell: UITableViewCell {
     let daysCount: Int
     let launchWasSuccessful: Bool
   }
-  private lazy var indicatorView = UIActivityIndicatorView()
-  private lazy var missionImageView = UIImageView()
-  private lazy var verticalTitlesStackView = UIStackView()
-  private lazy var missionNameTitleLabel = UILabel()
-  private lazy var timeTitleLabel = UILabel()
-  private lazy var rocketDetailsTitleLabel = UILabel()
-  private lazy var daysCountTitleLabel = UILabel()
-  private lazy var verticalValuesStackView = UIStackView()
-  private lazy var missionNameLabel = UILabel()
-  private lazy var timeLabel = UILabel()
-  private lazy var rocketDetailsLabel = UILabel()
-  private lazy var daysCountLabel = UILabel()
-  private lazy var launchSuccessIndicatorImageView = UIImageView()
-  private lazy var separatorView = UIView()
+  private let missionImageView = UIImageView()
+  private let verticalTitlesStackView = UIStackView()
+  private let missionNameTitleLabel = UILabel()
+  private let timeTitleLabel = UILabel()
+  private let rocketDetailsTitleLabel = UILabel()
+  private let daysCountTitleLabel = UILabel()
+  private let verticalValuesStackView = UIStackView()
+  private let missionNameLabel = UILabel()
+  private let timeLabel = UILabel()
+  private let rocketDetailsLabel = UILabel()
+  private let daysCountLabel = UILabel()
+  private let launchSuccessIndicatorImageView = UIImageView()
+  private let separatorView = UIView()
   
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -46,29 +45,22 @@ class LaunchListCell: UITableViewCell {
 }
 
 extension LaunchListCell {
-  func update(_ viewModel: ViewModel?) {
-    guard let model = viewModel else {
-      indicatorView.startAnimating()
-      missionImageView.image = nil
-      [verticalTitlesStackView, verticalValuesStackView].forEach { $0.fadeOut(0.0) }
-      return
-    }
+  func update(_ viewModel: ViewModel) {
     missionImageView.kf.setImage(
-      with: model.missionIconURL,
+      with: viewModel.missionIconURL,
       placeholder: ImageAssets.Icons.shuttle.image,
       options: [
         .transition(.fade(1)),
         .cacheOriginalImage
       ])
-    missionNameLabel.text = model.missionName
-    daysCountTitleLabel.text = model.daysCount < 0 ? "Days since now:" : "Days from now:"
-    missionNameLabel.text = model.missionName
-    timeLabel.text = model.missionTime
-    rocketDetailsLabel.text = model.rocketDetails
-    daysCountLabel.text = "\(model.daysCount)"
-    launchSuccessIndicatorImageView.image = model.launchWasSuccessful ? ImageAssets.Icons.success.image : ImageAssets.Icons.failure.image
+    missionNameLabel.text = viewModel.missionName
+    daysCountTitleLabel.text = viewModel.daysCount < 0 ? "Days since now:" : "Days from now:"
+    missionNameLabel.text = viewModel.missionName
+    timeLabel.text = viewModel.missionTime
+    rocketDetailsLabel.text = viewModel.rocketDetails
+    daysCountLabel.text = "\(viewModel.daysCount)"
+    launchSuccessIndicatorImageView.image = viewModel.launchWasSuccessful ? ImageAssets.Icons.success.image : ImageAssets.Icons.failure.image
     [verticalTitlesStackView, verticalValuesStackView].forEach { $0.fadeIn(0.2) }
-    indicatorView.stopAnimating()
   }
 }
 
@@ -76,28 +68,18 @@ extension LaunchListCell {
 private extension LaunchListCell {
   func setupViews() {
     setupView()
-    setupIndicatorView()
     setupMissionImageView()
     setupVerticalTitlesStackView()
     setupTitlesLabels()
     setupVerticalValuesStackView()
     setupValuesLabels()
     setupLaunchSuccessIndicatorImageView()
-    setupSeparatorView()
+//    setupSeparatorView()
   }
   
   func setupView() {
     contentView.backgroundColor = ColorAssets.General.white.color
     backgroundColor = ColorAssets.General.white.color
-  }
-  
-  func setupIndicatorView() {
-    addSubview(indicatorView)
-    indicatorView.snp.makeConstraints {
-      $0.center.equalToSuperview()
-    }
-    indicatorView.hidesWhenStopped = true
-    indicatorView.color = ColorAssets.General.gray.color
   }
   
   func setupMissionImageView() {

@@ -16,34 +16,34 @@ class LaunchFiltersContentView: UIView {
   var sortByAscending: ParametrisedAction<String?>?
   var applyFilterTapHandler: Action?
   var cancelTapHandler: Action?
-  private lazy var blurView = UIVisualEffectView(effect: blurEffect)
-  private lazy var blurEffect = UIBlurEffect(style: .light)
-  private lazy var containerView = UIView()
-  private lazy var verticalStackView = UIStackView()
-  private lazy var titleLabel = UILabel()
+  private(set) lazy var blurView = UIVisualEffectView(effect: blurEffect)
+  private let blurEffect = UIBlurEffect(style: .light)
+  private let containerView = UIView()
+  private let verticalStackView = UIStackView()
+  private let titleLabel = UILabel()
   // by year - switch
-  private lazy var yearsHorizontalStackView = UIStackView()
-  private lazy var yearsTitleLabel = UILabel()
-  private lazy var yearsSwitch = UISwitch()
+  private let yearsHorizontalStackView = UIStackView()
+  private let yearsTitleLabel = UILabel()
+  private let yearsSwitch = UISwitch()
   // year label - slider
-  private lazy var yearsSliderHorizontalStackView = UIStackView()
-  private lazy var yearsSlider = UISlider()
-  private lazy var selectedYearLabel = UILabel()
+  private let yearsSliderHorizontalStackView = UIStackView()
+  private let yearsSlider = UISlider()
+  private let selectedYearLabel = UILabel()
   // by success - switch
-  private lazy var successfulLaunchHorizontalStackView = UIStackView()
-  private lazy var successfulLaunchTitleLabel = UILabel()
-  private lazy var successfulLaunchSwitch = UISwitch()
+  private let successfulLaunchHorizontalStackView = UIStackView()
+  private let successfulLaunchTitleLabel = UILabel()
+  private let successfulLaunchSwitch = UISwitch()
   // success/failed - switch
-  private lazy var successfulLaunchIndicatorHorizontalStackView = UIStackView()
-  private lazy var successfulLaunchIndicatorLabel = UILabel()
-  private lazy var launchSuccessIndicatorSwitch = UISwitch()
+  private let successfulLaunchIndicatorHorizontalStackView = UIStackView()
+  private let successfulLaunchIndicatorLabel = UILabel()
+  private let launchSuccessIndicatorSwitch = UISwitch()
   // sorting - switch
-  private lazy var sortHorizontalStackView = UIStackView()
-  private lazy var sortTitleLabel = UILabel()
-  private lazy var sortSwitch = UISwitch()
+  private let sortHorizontalStackView = UIStackView()
+  private let sortTitleLabel = UILabel()
+  private let sortSwitch = UISwitch()
   // filter and cancel buttons
-  private lazy var cancelButton = UIButton(type: .system)
-  private lazy var filterButton = UIButton(type: .system)
+  private let cancelButton = UIButton(type: .system)
+  private let filterButton = UIButton(type: .system)
   
   override init(frame: CGRect) {
     super.init(frame: frame)

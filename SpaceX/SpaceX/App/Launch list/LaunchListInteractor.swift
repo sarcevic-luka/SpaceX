@@ -40,16 +40,7 @@ extension LaunchListInteractor: LaunchListBusinessLogic {
 
 private extension LaunchListInteractor {
   func getLaunchListDataOnly(queryParams: LaunchListFilters) -> Promise<(launchItems: [LaunchDetailsItem], totalCount: Int)> {
-    Promise { fullfill, reject in
-      self.launchListNetworkService.getLaunchList(queryParams: queryParams)
-        .then { (listItems, totalCount) in
-          return fullfill((listItems, totalCount))
-        }
-        .catch { error in
-          print(error.localizedDescription)
-          reject(error)
-        }
-    }
+    launchListNetworkService.getLaunchList(queryParams: queryParams)
   }
 }
 

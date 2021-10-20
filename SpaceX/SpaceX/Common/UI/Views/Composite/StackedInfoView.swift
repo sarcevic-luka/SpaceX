@@ -9,7 +9,7 @@ import UIKit
 import Assets
 
 class StackedInfoView: UIView {
-  private lazy var stackView = UIStackView()
+  private(set) lazy var stackView = UIStackView()
   private(set) lazy var titleLabel = UILabel()
   private(set) lazy var subtitleLabel = UILabel()
 
